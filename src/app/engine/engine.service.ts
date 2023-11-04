@@ -2,7 +2,7 @@ import { WindowRefService } from './../services/window-ref.service';
 import {ElementRef, Injectable, NgZone} from '@angular/core';
 import {
   Engine,
-  FreeCamera,
+  ArcRotateCamera,
   Scene,
   Light,
   Mesh,
@@ -20,7 +20,7 @@ import {
 export class EngineService {
   private canvas: HTMLCanvasElement;
   private engine: Engine;
-  private camera: FreeCamera;
+  private camera: ArcRotateCamera;
   private scene: Scene;
   private light: Light;
 
@@ -38,20 +38,20 @@ export class EngineService {
     // Then, load the Babylon 3D engine:
     this.engine = new Engine(this.canvas,  true);
 
-    // create a basic BJS Scene object
+    // シーンを作成 create a basic BJS Scene object
     this.scene = new Scene(this.engine);
     this.scene.clearColor = new Color4(0, 0, 0, 0);
 
-    // create a FreeCamera, and set its position to (x:5, y:10, z:-20 )
-    this.camera = new FreeCamera('camera1', new Vector3(5, 10, -20), this.scene);
+    // カメラを作成 create a FreeCamera, and set its position to (x:5, y:10, z:-20 )
+    this.camera = new ArcRotateCamera('camera1', -Math.PI / 2, Math.PI / 2.5, 3, new Vector3(5, 10, -20), this.scene);
 
     // target the camera to scene origin
     this.camera.setTarget(Vector3.Zero());
 
-    // attach the camera to the canvas
+    // ユーザからの入力でカメラをコントロールするため、カメラをキャンバスにアタッチ
     this.camera.attachControl(this.canvas, false);
 
-    // create a basic light, aiming 0,1,0 - meaning, to the sky
+    // ライトを作成 create a basic light, aiming 0,1,0 - meaning, to the sky
     this.light = new HemisphericLight('light1', new Vector3(0, 1, 0), this.scene);
 
     // create a built-in "sphere" shape; its constructor takes 4 params: name, subdivisions, radius, scene
