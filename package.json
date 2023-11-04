@@ -7,6 +7,7 @@
     "setup": "npm run _wasmcopy1 && npm run _wasmcopy2",
     "_wasmcopy1": "node -e \"require('fs').copyFileSync('node_modules/web-ifc/web-ifc.wasm', 'src/assets/wasm/web-ifc.wasm')\"",
     "_wasmcopy2": "node -e \"require('fs').copyFileSync('node_modules/web-ifc/web-ifc-mt.wasm', 'src/assets/wasm/web-ifc-mt.wasm')\"",
+    
     "build": "ng build -c development",
     "build:prod": "ng build -c production",
     "test": "ng test",
