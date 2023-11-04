@@ -1,5 +1,5 @@
 import { WindowRefService } from './../services/window-ref.service';
-import {ElementRef, Injectable, NgZone} from '@angular/core';
+import { ElementRef, Injectable, NgZone } from '@angular/core';
 import {
   Engine,
   ArcRotateCamera,
@@ -29,14 +29,14 @@ export class EngineService {
   public constructor(
     private ngZone: NgZone,
     private windowRef: WindowRefService
-  ) {}
+  ) { }
 
   public createScene(canvas: ElementRef<HTMLCanvasElement>): void {
     // The first step is to get the reference of the canvas element from our HTML document
     this.canvas = canvas.nativeElement;
 
     // Then, load the Babylon 3D engine:
-    this.engine = new Engine(this.canvas,  true);
+    this.engine = new Engine(this.canvas, true);
 
     // シーンを作成 create a basic BJS Scene object
     this.scene = new Scene(this.engine);
@@ -67,7 +67,7 @@ export class EngineService {
 
     // simple rotation along the y axis
     this.scene.registerAfterRender(() => {
-      this.sphere.rotate (
+      this.sphere.rotate(
         new Vector3(0, 1, 0),
         0.02,
         Space.LOCAL
@@ -112,7 +112,7 @@ export class EngineService {
     const makeTextPlane = (text: string, color: string, textSize: number) => {
       const dynamicTexture = new DynamicTexture('DynamicTexture', 50, this.scene, true);
       dynamicTexture.hasAlpha = true;
-      dynamicTexture.drawText(text, 5, 40, 'bold 36px Arial', color , 'transparent', true);
+      dynamicTexture.drawText(text, 5, 40, 'bold 36px Arial', color, 'transparent', true);
       const plane = Mesh.CreatePlane('TextPlane', textSize, this.scene, true);
       const material = new StandardMaterial('TextPlaneMaterial', this.scene);
       material.backFaceCulling = false;
@@ -141,8 +141,9 @@ export class EngineService {
     const axisY = Mesh.CreateLines(
       'axisY',
       [
-        Vector3.Zero(), new Vector3(0, size, 0), new Vector3( -0.05 * size, size * 0.95, 0),
-        new Vector3(0, size, 0), new Vector3( 0.05 * size, size * 0.95, 0)
+        Vector3.Zero(),
+        new Vector3(0, size, 0), new Vector3(-0.05 * size, size * 0.95, 0),
+        new Vector3(0, size, 0), new Vector3(0.05 * size, size * 0.95, 0)
       ],
       this.scene,
       true
@@ -155,8 +156,9 @@ export class EngineService {
     const axisZ = Mesh.CreateLines(
       'axisZ',
       [
-        Vector3.Zero(), new Vector3(0, 0, size), new Vector3( 0 , -0.05 * size, size * 0.95),
-        new Vector3(0, 0, size), new Vector3( 0, 0.05 * size, size * 0.95)
+        Vector3.Zero(),
+        new Vector3(0, 0, size), new Vector3(0, -0.05 * size, size * 0.95),
+        new Vector3(0, 0, size), new Vector3(0, 0.05 * size, size * 0.95)
       ],
       this.scene,
       true
