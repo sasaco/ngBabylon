@@ -7,7 +7,6 @@
     "start": "ng serve -o",
     "build": "ng build -c development",
     "build:prod": "ng build -c production",
-    "build:both": "npm run build && npm run build:prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
