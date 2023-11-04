@@ -15,6 +15,8 @@ import {
   DynamicTexture,
   Space
 } from '@babylonjs/core';
+import * as WebIFC from 'web-ifc';
+
 
 @Injectable({ providedIn: 'root' })
 export class EngineService {
@@ -26,10 +28,15 @@ export class EngineService {
 
   private sphere: Mesh;
 
+  private ifcapi = new WebIFC.IfcAPI();
+
+
   public constructor(
     private ngZone: NgZone,
     private windowRef: WindowRefService
-  ) { }
+  ) {
+    this.ifcapi.SetWasmPath("./assets/wasm/");
+   }
 
   public createScene(canvas: ElementRef<HTMLCanvasElement>): void {
     // The first step is to get the reference of the canvas element from our HTML document

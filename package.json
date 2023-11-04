@@ -3,8 +3,10 @@
   "version": "16.2.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve -o",
+    "start": "npm run setup && ng serve -o",
+    "setup": "npm run _wasmcopy1 && npm run _wasmcopy2",
+    "_wasmcopy1": "node -e \"require('fs').copyFileSync('node_modules/web-ifc/web-ifc.wasm', 'src/assets/wasm/web-ifc.wasm')\"",
+    "_wasmcopy2": "node -e \"require('fs').copyFileSync('node_modules/web-ifc/web-ifc-mt.wasm', 'src/assets/wasm/web-ifc-mt.wasm')\"",
     "build": "ng build -c development",
     "build:prod": "ng build -c production",
     "test": "ng test",
@@ -26,6 +28,7 @@
     "bootstrap": "^5.3.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.4.0",
+    "web-ifc": "^0.0.44",
     "zone.js": "~0.13.1"
   },
   "devDependencies": {

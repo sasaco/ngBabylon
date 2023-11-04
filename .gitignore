@@ -44,3 +44,4 @@ Thumbs.db
 
 # Project specific
 package-lock.json
+src/assets/wasm/

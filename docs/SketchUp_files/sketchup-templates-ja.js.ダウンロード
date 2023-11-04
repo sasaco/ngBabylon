@@ -1,0 +1,1556 @@
+// This file was automatically generated from app.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.fullscreen = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="fullscreen-button"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'full-screen-arrows.png') + '" /></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.fullscreen.soyTemplateName = 'SketchUpTemplates.fullscreen';
+}
+
+
+SketchUpTemplates.inputText = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="editable-text-field"><span class="title">' + soy.$$escapeHtml(opt_data.title) + '</span><input type="text" value="' + soy.$$escapeHtml(opt_data.initialValue) + '" /></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.inputText.soyTemplateName = 'SketchUpTemplates.inputText';
+}
+
+
+SketchUpTemplates.tabbedBrowserContents = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="collapsible-browser-contents"><div class="browser-tabs"><div data-tab="home" title="' + soy.$$escapeHtml(opt_data.homeTabTitle) + '" data-testid="rightSidebar-homeTab" class="browser-tab ' + ((opt_data.homeTabIsSelected) ? 'selected-tab' : '') + '"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_InModel.svg') + '" /></div><div data-tab="browse" title="' + soy.$$escapeHtml(opt_data.browseTabTitle) + '" data-testid="rightSidebar-browseTab" class="browser-tab ' + ((! opt_data.homeTabIsSelected) ? 'selected-tab' : '') + '"><img src="' + ((opt_data.browseTabImage == null) ? soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_Browse.svg') : soy.$$escapeHtml(opt_data.browseTabImage)) + '" /></div></div>' + ((opt_data.hasEditControls) ? SketchUpTemplates.topActionsBar(null, null, opt_ijData) : '') + '<div class="browser-content ' + soy.$$escapeHtml(opt_data.browserContentClass) + '"></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.tabbedBrowserContents.soyTemplateName = 'SketchUpTemplates.tabbedBrowserContents';
+}
+
+
+SketchUpTemplates.topActionsBar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="browser-top-actions"><div class="content"><div class="search"></div><div class="edit">' + SketchUpTemplates.squareThumbnail(opt_data, null, opt_ijData) + '<div class="edit-button" data-testid="tabbedBrowser-edit"><svg viewBox="0 0 32 32"><use xlink:href="#u_edit"/></svg></div><div class="download-button" data-testid="tabbedBrowser-download"><svg viewBox="-4 -4 32 32"><use xlink:href="#tb_download"/></svg></div><div class="upload-button" data-testid="tabbedBrowser-upload"><svg viewBox="-4 -3 32 32"><use xlink:href="#tb_download"/></svg></div></div><div class="selected-name" data-testid="tabbedBrowser-selectedName">\u9078\u629E\u306A\u3057</div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.topActionsBar.soyTemplateName = 'SketchUpTemplates.topActionsBar';
+}
+
+
+SketchUpTemplates.squareThumbnail = function(opt_data, opt_ignored, opt_ijData) {
+  opt_data = opt_data || {};
+  return '<div class="square-thumbnail">' + ((opt_data.thumbnail != null) ? '<img style="width:64px; height:64px;" src="' + soy.$$escapeHtml(opt_ijData.THUMBNAIL_DATA_URL) + soy.$$escapeHtml(opt_data.thumbnail) + '">' : '<img style="width:64px; height:64px;" src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'pnl_mtl_unselected.svg') + '">') + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.squareThumbnail.soyTemplateName = 'SketchUpTemplates.squareThumbnail';
+}
+
+
+SketchUpTemplates.browserContentContainer = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="browser-content-container"></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.browserContentContainer.soyTemplateName = 'SketchUpTemplates.browserContentContainer';
+}
+
+;
+// This file was automatically generated from bottombar.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.prompt = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div id="prompt" style="visibility:hidden" class="prompt"></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.prompt.soyTemplateName = 'SketchUpTemplates.prompt';
+}
+
+
+SketchUpTemplates.measureBar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div id="measure-box-container" class="measure-bar-container"><form><label id="measurements-box-label" for="measurements-box">\u6E2C\u5B9A</label><input type="text" id="measurements-box" value="" readonly></form></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.measureBar.soyTemplateName = 'SketchUpTemplates.measureBar';
+}
+
+
+SketchUpTemplates.bottomBar = function(opt_data, opt_ignored, opt_ijData) {
+  opt_data = opt_data || {};
+  return '<div class="bottom-bar-container"><div class="js-bottom-bar-menus-container"><div class="bottom-bar-icon-link" title="\u30D8\u30EB\u30D7"><svg viewBox="0 0 32 32" data-bind="event: {mousedown: toggleHelp}"><use xlink:href="#stb_help" /></svg><div class="help" data-bind="css: {\'hidden\': openMenu()!==BottomBarMenu.Help}"><div class="help-title">\u30D8\u30EB\u30D7\u304C\u3054\u5FC5\u8981\u3067\u3059\u304B?</div><!\u2013\u2013 Opens a new tab and does not close help. \u2013\u2013><div class="secondary-action-button" onclick="window.open(\'' + soy.$$escapeHtml(opt_data.programModeHelpLink) + '\', \'_blank\')">\u30D8\u30EB\u30D7 \u30BB\u30F3\u30BF\u30FC\u3092\u63A2\u7D22</div><!\u2013\u2013 Opens a new tab and does not close help. \u2013\u2013><div class="secondary-action-button" onclick="window.open(\'' + soy.$$escapeHtml(opt_data.forumLink) + '\', \'_blank\')">\u30D5\u30A9\u30FC\u30E9\u30E0\u3092\u63A2\u7D22</div><!\u2013\u2013 Opens a new tab and does not close help. \u2013\u2013><div class="secondary-action-button" data-bind="visible: hasTechSupport()" onclick="window.open(\'' + soy.$$escapeHtml(opt_data.contactSupportLink) + '\', \'_blank\')">\u30C6\u30AF\u30CB\u30AB\u30EB \u30B5\u30DD\u30FC\u30C8\u306B\u304A\u554F\u3044\u5408\u308F\u305B</div><!\u2013\u2013 Launches omnibar and closes help. \u2013\u2013><div data-bind="if: isSearchEnabled"><div class="secondary-action-button" data-bind="click: launchOmnibar">SketchUp \u691C\u7D22</div></div></div></div><div class="bottom-bar-language-select" data-testid="bottomBar-languageSelect"><svg viewBox="0 0 32 32" data-bind="event: {mousedown: toggleLanguageSelector}" title="\u8A00\u8A9E"><use xlink:href="#stb_language" /></svg><div class="bottom-bar-language-select-options" data-bind="css: {opened: openMenu()===BottomBarMenu.Languages}, foreach: languages"><div class="bottom-bar-language-select-option" data-bind="click: $parent.setLanguage.bind($parent, code), css: {selected: code === $parent.getCurrentLanguage()}, text: name" data-testid="languageSelect-option"></div></div></div><div class="bottom-bar-input-device-select" ><svg viewBox="0 -1 24 24" data-bind="event: {mousedown: showInputDevicePicker}" title="\u5165\u529B\u30C7\u30D0\u30A4\u30B9\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044"><use data-bind="visible: isUsingMouse" xlink:href="#mouse_no_wire" /><use data-bind="visible: !isUsingMouse()" xlink:href="#trackpad" /></svg></div></div>' + SketchUpTemplates.prompt(null, null, opt_ijData) + SketchUpTemplates.measureBar(null, null, opt_ijData) + '<img class="bottom-bar-brand-logo" src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'sketchup_logo.svg') + '" /></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.bottomBar.soyTemplateName = 'SketchUpTemplates.bottomBar';
+}
+
+;
+// This file was automatically generated from checkbox.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.checkbox = function(opt_data, opt_ignored, opt_ijData) {
+  return '<input type="checkbox" value="None" id="' + soy.$$escapeHtml(opt_data.id) + '" class="checkbox" name="check" data-testid="' + soy.$$escapeHtml(opt_data.testId) + '" data-bind="checked: ' + soy.$$escapeHtml(opt_data.checkedBinding) + ', click: ' + soy.$$escapeHtml(opt_data.clickHandler) + ', enable: ' + soy.$$escapeHtml(opt_data.enableBinding || true) + '"><label for="' + soy.$$escapeHtml(opt_data.id) + '" class="checkbox-label"><div class="checkbox-checkmark" data-testid=\'checkbox-checkmark\'></div></label>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.checkbox.soyTemplateName = 'SketchUpTemplates.checkbox';
+}
+
+
+SketchUpTemplates.labeledCheckbox = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="labeled-checkbox" data-bind="click: ' + soy.$$escapeHtml(opt_data.clickHandler) + '"><div>' + soy.$$escapeHtml(opt_data.title) + '</div><div class="labeled-checkbox-container">' + SketchUpTemplates.checkbox({id: 'labeled-checkbox-' + opt_data.checkedBinding, checkedBinding: opt_data.checkedBinding, clickHandler: opt_data.clickHandler}, null, opt_ijData) + '</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.labeledCheckbox.soyTemplateName = 'SketchUpTemplates.labeledCheckbox';
+}
+
+;
+// This file was automatically generated from colladaexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.colladaExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'collada-export-two-sided-faces', checkedBinding: 'exportDoubleSidedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-export-two-sided-faces">\u88CF\u9762\u3068\u8868\u9762\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'collada-export-edges', checkedBinding: 'exportEdges', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-export-edges">\u30A8\u30C3\u30B8\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'collada-export-triangulated-faces', checkedBinding: 'exportTriangulatedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-export-triangulated-faces">\u3059\u3079\u3066\u306E\u9762\u3092\u4E09\u89D2\u5F62\u5316\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'collada-export-hidden-geometry', checkedBinding: 'exportHiddenGeometry', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-export-hidden-geometry">\u975E\u8868\u793A\u306E\u30B8\u30AA\u30E1\u30C8\u30EA\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'collada-export-preserve-hierarchy', checkedBinding: 'exportPreserveHierarchies', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-export-preserve-hierarchy">\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8\u306E\u968E\u5C64\u3092\u4FDD\u6301</label></div></div><div class="section"><div class="section-header">\u30DE\u30C6\u30EA\u30A2\u30EB</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'collada-export-texture-maps', checkedBinding: 'exportTextureMaps', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-export-texture-maps">\u30C6\u30AF\u30B9\u30C1\u30E3 \u30DE\u30C3\u30D7\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u30AF\u30EC\u30B8\u30C3\u30C8</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'collada-export-author-attribution', checkedBinding: 'exportAuthorAttribution', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-export-author-attribution">\u30AF\u30EC\u30B8\u30C3\u30C8\u3092\u7DAD\u6301\u3059\u308B</label></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.colladaExportOptions.soyTemplateName = 'SketchUpTemplates.colladaExportOptions';
+}
+
+;
+// This file was automatically generated from colladakmzimport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.colladaKmzImportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="import-options"><div class="section"><div class="import-option">' + SketchUpTemplates.checkbox({id: 'collada-kmz-import-validate-dae', checkedBinding: 'importValidateDAE', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-kmz-import-validate-dae">Collada \u30D5\u30A1\u30A4\u30EB\u3092\u691C\u8A3C\u3059\u308B</label></div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'collada-kmz-import-merge-coplanar-faces', checkedBinding: 'importMergeCoplanarFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="collada-kmz-import-merge-coplanar-faces">\u540C\u4E00\u5E73\u9762\u4E0A\u306E\u9762\u3092\u30DE\u30FC\u30B8\u3059\u308B</label></div></div>' + SketchUpTemplates.importerButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.colladaKmzImportOptions.soyTemplateName = 'SketchUpTemplates.colladaKmzImportOptions';
+}
+
+;
+// This file was automatically generated from components.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.componentsBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  var output = '<div class="components browser" id="components-browser-top" style=""><div class="browser-header"><div class="title">\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8</div><div class="browser-header-close" data-testid="componentsBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div>';
+  if (opt_data.warehouseSearchInComponentsBrowser) {
+    var stylesHomeTabTitle__soy256 = '\u30E2\u30C7\u30EB\u5185';
+    var stylesBrowseTabTitle__soy260 = '3D Warehouse \u691C\u7D22';
+    output += SketchUpTemplates.tabbedBrowserContents({homeTabTitle: stylesHomeTabTitle__soy256, browseTabTitle: stylesBrowseTabTitle__soy260, homeTabIsSelected: true, hasEditControls: false, browseTabImage: opt_ijData.IMG_DIR + 'wi_warehouse.svg', browserContentClass: 'components-content'}, null, opt_ijData);
+  } else {
+    output += '<div class="collapsible-browser-contents"><div class="browser-content components-content"></div></div>';
+  }
+  return output;
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.componentsBrowser.soyTemplateName = 'SketchUpTemplates.componentsBrowser';
+}
+
+
+SketchUpTemplates.componentsBottomActionsBar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="browser-bottom-actions-bar"><div class="browser-bottom-bar-action components-purge-button" data-bind="click: purge, css: { \'purging\': isPurging() }" title="\u672A\u4F7F\u7528\u306E\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8\u3092\u524A\u9664"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'lyr_purge.svg') + '" /></div><div class="browser-bottom-bar-action components-overflow" data-bind="click: togglePopupMenu" title="\u305D\u306E\u4ED6\u306E\u30AA\u30D7\u30B7\u30E7\u30F3\u3092\u8868\u793A"><svg class="icon" viewBox="0 0 32 32"><use xlink:href="#overflow-menu" /></svg></div><div class="action-bar-overflow" data-bind="css: {hidden: popupHidden}"><div class="action-bar-overflow-option" data-bind="click: setViewType.bind(this, ViewType.LIST_VIEW)"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'checkmark-icon.png') + '" class="check-mark" data-bind="style: {visibility: (viewType() === ViewType.LIST_VIEW ? \'visible\' : \'hidden\')}"/>\u8868\u793A - \u30EA\u30B9\u30C8</div><div class="action-bar-overflow-option" data-bind="click: setViewType.bind(this, ViewType.DETAILS_VIEW)"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'checkmark-icon.png') + '" class="check-mark" data-bind="style: {visibility: (viewType() === ViewType.DETAILS_VIEW ? \'visible\' : \'hidden\')}"/>\u8868\u793A - \u8A73\u7D30</div><div class="action-bar-overflow-option" data-bind="click: setViewType.bind(this, ViewType.THUMBNAIL_VIEW)"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'checkmark-icon.png') + '" class="check-mark" data-bind="style: {visibility: (viewType() === ViewType.THUMBNAIL_VIEW ? \'visible\' : \'hidden\')}"/>\u8868\u793A - \u30B5\u30E0\u30CD\u30A4\u30EB</div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.componentsBottomActionsBar.soyTemplateName = 'SketchUpTemplates.componentsBottomActionsBar';
+}
+
+
+SketchUpTemplates.resultsNavigation = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="browser-bottom-actions-bar components-navigation"><div id="previous-page-button" class="browser-bottom-bar-action" title="Previous page"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_left_arrow.svg') + '"></div><div class="warehouse-pages"></div><div id="next-page-button" class="browser-bottom-bar-action" title="Next page"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_right_arrow.svg') + '"></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.resultsNavigation.soyTemplateName = 'SketchUpTemplates.resultsNavigation';
+}
+
+
+SketchUpTemplates.warehouseAnalyticsIframe = function(opt_data, opt_ignored, opt_ijData) {
+  return '<iframe src="' + soy.$$escapeHtml(opt_data.analyticsIframeUrl) + '"></iframe>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.warehouseAnalyticsIframe.soyTemplateName = 'SketchUpTemplates.warehouseAnalyticsIframe';
+}
+
+
+SketchUpTemplates.components3DWSearch = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="components-toolbar"><form id="warehouse-search"><input class="warehouse-search-query" type="text" data-testid="warehouse-search-query" placeholder="3D Warehouse \u691C\u7D22" /><input type="submit" value=""/></form></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.components3DWSearch.soyTemplateName = 'SketchUpTemplates.components3DWSearch';
+}
+
+
+SketchUpTemplates.noResults3DWSearch = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="warehouse-search-no-results">\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u7D50\u679C\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093\u3067\u3057\u305F\u3002</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.noResults3DWSearch.soyTemplateName = 'SketchUpTemplates.noResults3DWSearch';
+}
+
+
+SketchUpTemplates.component = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="component-instance-container expandable" data-testid="componentExpandableContainer"><div class="component-instance"><div class="component-thumbnail">' + ((opt_data.thumbnailUrl) ? '<img src="' + soy.$$escapeHtml(opt_data.thumbnailUrl) + '">' : (opt_data.thumbnailBase64) ? '<img src="' + soy.$$escapeHtml(opt_ijData.THUMBNAIL_DATA_URL) + soy.$$escapeHtml(opt_data.thumbnailBase64) + '">' : '<svg class="component-thumbnail-placeholder" viewBox="0 0 32 32"><title>\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8\u306E\u30B5\u30E0\u30CD\u30A4\u30EB\u3092\u8868\u793A</title><use xlink:href="#wi-component" /></svg>') + '</div><div class="component-details"><div class="component-title" title="' + soy.$$escapeHtml(opt_data.title) + '" data-testid="componentTitle">' + soy.$$escapeHtml(opt_data.title) + '</div><div class="component-author" data-testid="componentAuthor">' + ((opt_data.author) ? 'By ' + soy.$$escapeHtml(opt_data.author) : '') + '</div><div class="component-description" title="' + soy.$$escapeHtml(opt_data.description) + '" data-testid="componentDescription">' + soy.$$truncate(soy.$$escapeHtml(opt_data.description), 55, true) + '</div>' + ((opt_data.fileSize) ? '<span class="component-tag">' + soy.$$escapeHtml(opt_data.fileSize) + '</span>' : '') + ((opt_data.downloadCount) ? '<span class="component-tag">' + soy.$$escapeHtml(opt_data.downloadCount) + ' <svg viewBox="0 0 32 32"><use xlink:href="#download_count_icon" /></svg></span>' : '') + '</div>' + ((opt_data.addExpander) ? '<div class="expand-button" data-testid="componentExpandButton"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div>' : '') + '</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.component.soyTemplateName = 'SketchUpTemplates.component';
+}
+
+
+SketchUpTemplates.componentDetails = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="component-edit-tabs"></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.componentDetails.soyTemplateName = 'SketchUpTemplates.componentDetails';
+}
+
+;
+// This file was automatically generated from demimport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.demImportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="import-options"><div class="section"><div class="section-header">TIN</div><div class="option-label">\u70B9:</div><div class="import-option"><input type="number" min="3" data-bind="value: importMaxPoints" /></div><div class="option-label">\u9762:</div><div class="import-option"><div data-bind="text: importMaxFaces"></div></div></div><div class="section"><div class="section-header">\u8272</div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'dem-import-generate-texture', checkedBinding: 'importGenerateTexture', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dem-import-generate-texture">\u30B0\u30E9\u30C7\u30FC\u30B7\u30E7\u30F3 \u30C6\u30AF\u30B9\u30C1\u30E3\u3092\u751F\u6210\u3059\u308B</label></div></div>' + SketchUpTemplates.importerButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.demImportOptions.soyTemplateName = 'SketchUpTemplates.demImportOptions';
+}
+
+;
+// This file was automatically generated from dimensiondetails.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.dimensionDetails = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="dimension-details"><div class="dimension-details-section"><div class="dimension-details-section-header">\u30D5\u30A9\u30F3\u30C8:</div><div class="face-selector-wrapper" data-bind="css: {invisible: hasCommonFont()}"></div><div class="font-selector-wrapper" data-bind="css: {invisible: !hasCommonFont()}"></div></div><div class="dimension-details-section"><div class="dimension-details-section-header">\u5272\u308A\u5F53\u3066\u5148:</div><div class="option-set"><div class="button" data-bind=" click: setTextAlign.bind($data, TextAlign.ABOVE), css: {editable: canSetAlignAboveOrOutside, hidden: forRadial, selected: textAlignment() === TextAlign.ABOVE}" title="\u5BF8\u6CD5\u7DDA\u306E\u4E0A\u306B\u30C6\u30AD\u30B9\u30C8\u3092\u63C3\u3048\u308B">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-top'}, null, opt_ijData) + '</div><div class="button" data-bind=" click: setTextAlign.bind($data, TextAlign.CENTERED), css: {editable: canSetTextAlign, selected: textAlignment() === TextAlign.CENTERED}" title="\u5BF8\u6CD5\u7DDA\u306E\u4E2D\u5FC3\u306B\u30C6\u30AD\u30B9\u30C8\u3092\u63C3\u3048\u308B">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-centered'}, null, opt_ijData) + '</div><div class="button" data-bind=" click: setTextAlign.bind($data, TextAlign.OUTSIDE), css: {editable: canSetAlignAboveOrOutside, hidden: forRadial, selected: textAlignment() === TextAlign.OUTSIDE}" title="\u5BF8\u6CD5\u7DDA\u306E\u5916\u5074\u306B\u30C6\u30AD\u30B9\u30C8\u3092\u63C3\u3048\u308B">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-bottom'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setTextAlign.bind($data, TextAlign.SCREEN), css: {editable: canSetTextAlign, selected: textAlignment() === TextAlign.SCREEN}" title="\u753B\u9762\u306B\u30C6\u30AD\u30B9\u30C8\u3092\u63C3\u3048\u308B">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-align-to-screen'}, null, opt_ijData) + '</div></div></div><div class="dimension-details-section" data-bind="if: !forRadial && !forGlobal"><div class="dimension-details-section-header">\u30C6\u30AD\u30B9\u30C8\u306E\u4F4D\u7F6E</div><div class="option-set" data-bind="css: {editable: canSetTextPosition}"><div class="button" data-bind="click: setTextPosition.bind($data, TextPosition.START), css: {selected: textPosition() === TextPosition.START}" title="\u30C6\u30AD\u30B9\u30C8\u3092\u6700\u521D\u306B\u914D\u7F6E">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-start'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setTextPosition.bind($data, TextPosition.CENTERED), css: {selected: textPosition() === TextPosition.CENTERED}" title="\u30C6\u30AD\u30B9\u30C8\u3092\u4E2D\u592E\u306B\u914D\u7F6E">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-centered'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setTextPosition.bind($data, TextPosition.END), css: {selected: textPosition() === TextPosition.END}" title="\u30C6\u30AD\u30B9\u30C8\u3092\u6700\u5F8C\u306B\u914D\u7F6E">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-end'}, null, opt_ijData) + '</div></div></div><div class="dimension-details-section"><div class="dimension-details-section-header">\u7AEF\u70B9:</div><div class="option-set" data-bind="css: {editable: canSetArrowType}"><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.NONE), css: {selected: arrowType() === ArrowType.NONE}" title="\u306A\u3057">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-none'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.SLASH), css: {selected: arrowType() === ArrowType.SLASH}" title="\u30B9\u30E9\u30C3\u30B7\u30E5">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-slash'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.DOT), css: {selected: arrowType() === ArrowType.DOT}" title="\u70B9">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-dot'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.CLOSED), css: {selected: arrowType() === ArrowType.CLOSED}" title="\u9589\u77E2\u5370">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-closed'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.OPEN), css: {selected: arrowType() === ArrowType.OPEN}" title="\u958B\u77E2\u5370">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-open'}, null, opt_ijData) + '</div></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.dimensionDetails.soyTemplateName = 'SketchUpTemplates.dimensionDetails';
+}
+
+;
+// This file was automatically generated from display.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.displayBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="shadows display-browser browser" id="display-browser-top"><div class="browser-header"><div class="title">\u8868\u793A</div><div class="browser-header-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="collapsible-browser-contents"><div class="display">' + ((opt_data.unhideAvailable) ? '<div class="display-unhide-content display-section">' + SketchUpTemplates.unhideContent(null, null, opt_ijData) + '</div>' : '') + ((opt_data.dividersAvailable) ? '<div class="display-section-divider"></div>' : '') + ((opt_data.visibilityAvailable) ? '<div class="display-visibility-content display-section">' + SketchUpTemplates.visibilityContent(null, null, opt_ijData) + '</div>' : '') + ((opt_data.dividersAvailable) ? '<div class="display-section-divider"></div>' : '') + '<div class="display-edit-visibility-content display-section">' + SketchUpTemplates.editVisibility(null, null, opt_ijData) + '</div>' + ((opt_data.dividersAvailable) ? '<div class="display-section-divider"></div>' : '') + ((opt_data.shadowsAvailable) ? '<div class="display-shadows-content display-section">' + SketchUpTemplates.shadowsContent(null, null, opt_ijData) + '</div>' + ((opt_data.dividersAvailable) ? '<div class="display-section-divider"></div>' : '') : '') + ((opt_data.fogAvailable) ? '<div class="display-fog-content display-section">' + SketchUpTemplates.fogContent(null, null, opt_ijData) + '</div>' : '') + ((opt_data.dividersAvailable) ? '<div class="display-section-divider"></div>' : '') + ((opt_data.edgesAvailable) ? '<div class="display-edges-content display-section">' + SketchUpTemplates.smoothContent(null, null, opt_ijData) + '</div>' : '') + '</div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.displayBrowser.soyTemplateName = 'SketchUpTemplates.displayBrowser';
+}
+
+
+SketchUpTemplates.unhideContent = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="display-header">\u8868\u793A</div><div class="visibility-header"><div class="display-visibility-button" data-bind="click: onUnhideAll"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_unhide_all.svg') + '" title="\u3059\u3079\u3066\u8868\u793A"/><div class="display-visibility-button-text">\u3059\u3079\u3066</div></div><div class="display-visibility-button" data-bind="click: onUnhideSelected"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_unhide_selected.svg') + '" title="\u9078\u629E\u9805\u76EE\u3092\u8868\u793A"/><div class="display-visibility-button-text">\u9078\u629E</div></div><div class="display-visibility-button" data-bind="click: onUnhideLast"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_unhide_last.svg') + '" title="\u524D\u56DE\u306E\u9805\u76EE\u3092\u8868\u793A"/><div class="display-visibility-button-text">1 \u3064\u524D</div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.unhideContent.soyTemplateName = 'SketchUpTemplates.unhideContent';
+}
+
+
+SketchUpTemplates.visibilityContent = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="display-header">\u8868\u793A</div><div class="display-primary-control" data-bind="click: onShowHiddenObjects"><div class="display-horizontal-group"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_hidden_objects.svg') + '"/><span>\u975E\u8868\u793A\u306E\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8</span></div><div>' + SketchUpTemplates.checkbox({id: 'hidden-objects-checkbox', checkedBinding: 'showHiddenObjects', clickHandler: 'onShowHiddenObjects'}, null, opt_ijData) + '</div></div><div class="display-primary-control" data-bind="click: onShowHiddenGeometry"><div class="display-horizontal-group"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_hidden_geometry.svg') + '"/><span>\u96A0\u3057\u30B8\u30AA\u30E1\u30C8\u30EA</span></div><div>' + SketchUpTemplates.checkbox({id: 'hidden-geometry-checkbox', checkedBinding: 'showHiddenGeometry', clickHandler: 'onShowHiddenGeometry'}, null, opt_ijData) + '</div></div><div class="display-primary-control" data-bind="click: onShowSectionPlanes"><div class="display-horizontal-group"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_section_planes.svg') + '"/><span>\u65AD\u9762\u5E73\u9762</span></div><div>' + SketchUpTemplates.checkbox({id: 'section-planes-checkbox', checkedBinding: 'showSectionPlanes', clickHandler: 'onShowSectionPlanes'}, null, opt_ijData) + '</div></div><div class="display-primary-control" data-bind="click: onShowSectionCuts"><div class="display-horizontal-group"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_section_cuts.svg') + '"/><span>\u65AD\u9762\u30AB\u30C3\u30C8</span></div><div>' + SketchUpTemplates.checkbox({id: 'section-cuts-checkbox', checkedBinding: 'showSectionCuts', clickHandler: 'onShowSectionCuts'}, null, opt_ijData) + '</div></div><div class="display-primary-control" data-bind="click: onShowAxes"><div class="display-horizontal-group"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_display_axes.svg') + '"/><span>\u8EF8</span></div><div>' + SketchUpTemplates.checkbox({id: 'axes-checkbox', checkedBinding: 'showAxes', clickHandler: 'onShowAxes'}, null, opt_ijData) + '</div></div><div class="display-primary-control" data-bind="click: onShowGuideLines"><div class="display-horizontal-group"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_display_guides.svg') + '"/><span>\u30AC\u30A4\u30C9</span></div><div>' + SketchUpTemplates.checkbox({id: 'guides-checkbox', checkedBinding: 'showGuideLines', clickHandler: 'onShowGuideLines'}, null, opt_ijData) + '</div></div><div class="secondary-action-button delete-all-guides-button" data-bind="click: onDeleteAllGuides">\u3059\u3079\u3066\u306E\u30AC\u30A4\u30C9\u3092\u524A\u9664</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.visibilityContent.soyTemplateName = 'SketchUpTemplates.visibilityContent';
+}
+
+
+SketchUpTemplates.editVisibility = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="display-header">\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8\u7DE8\u96C6</div><div class="display-primary-control" data-bind="click: toggleHideRestOfModel"><div class="display-horizontal-group no-icon"><span>\u30E2\u30C7\u30EB\u5185\u306E\u6B8B\u308A\u3092\u975E\u8868\u793A</span></div><div>' + SketchUpTemplates.checkbox({id: 'hide-model-checkbox', checkedBinding: 'hideRestOfModel', clickHandler: 'toggleHideRestOfModel'}, null, opt_ijData) + '</div></div><div class="display-primary-control" data-bind="click: toggleHideSimilarComponents"><div class="display-horizontal-group no-icon"><span>\u985E\u4F3C\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8\u3092\u975E\u8868\u793A</span></div><div>' + SketchUpTemplates.checkbox({id: 'hide-similar-checkbox', checkedBinding: 'hideSimilarComponents', clickHandler: 'toggleHideSimilarComponents'}, null, opt_ijData) + '</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.editVisibility.soyTemplateName = 'SketchUpTemplates.editVisibility';
+}
+
+
+SketchUpTemplates.shadowsContent = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="display-primary-control" data-bind="click: toggleShadows"><div class="display-horizontal-group"><div class="display-horizontal-group-primary"><img title="\u5F71\u306E\u5207\u308A\u66FF\u3048" data-bind="attr: {src: shadowsImageSrc}"/><span data-bind="text: shadowsImageText"></span></div></div><div>' + SketchUpTemplates.checkbox({id: 'enable-shadows-checkbox', checkedBinding: 'enabled', clickHandler: 'toggleShadows'}, null, opt_ijData) + '</div></div><div class="display-secondary-control" data-bind="css: { \'disabled\': !enabled() }"><div class="slider-label">\u6642\u523B</div><input class="display-content-slider" data-bind=" attr: {max: maxTime}, value: timeValue, event: { input: onSlideTime($element.value) }" type="range" min="0" /><input class="shadows-time-input" type="text" data-bind="value: timeString" /></div><div class="display-secondary-control" data-bind="css: { \'disabled\': !enabled() }"><div class="slider-label">\u65E5\u4ED8</div><input class="display-content-slider" data-bind=" attr: {max: maxDays}, value: dateValue, event: { input: onSlideDate($element.value) }" type="range" min="0" /><input class="shadows-date-input" type="text" data-bind="value: dateString" /></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.shadowsContent.soyTemplateName = 'SketchUpTemplates.shadowsContent';
+}
+
+
+SketchUpTemplates.fogContent = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="display-primary-control" data-bind="click: toggleFog"><div class="display-horizontal-group"><div class="display-horizontal-group-primary"><img title="\u30D5\u30A9\u30B0\u3092\u5207\u308A\u66FF\u3048" data-bind="attr: {src: fogImageSrc}"/><span data-bind="text: fogImageText"></span></div></div><div>' + SketchUpTemplates.checkbox({id: 'enable-fog-checkbox', checkedBinding: 'fogEnabled', clickHandler: 'toggleFog'}, null, opt_ijData) + '</div></div><div class="display-secondary-control" data-bind="css: { \'disabled\': !fogEnabled() }"><div class="slider-label">\u8DDD\u96E2</div><div class="near-far-slider"></div></div><div class="display-secondary-control" data-bind="css: { \'disabled\': !fogEnabled() }"><div><span>\u80CC\u666F\u8272\u3092\u4F7F\u7528\u3059\u308B</span></div><div>' + SketchUpTemplates.checkbox({id: 'choose-fog-color-checkbox', checkedBinding: 'useBackgroundColor', clickHandler: ''}, null, opt_ijData) + '</div></div><div class="fog-color-container" data-bind="css: { invisible: useBackgroundColor() || !fogEnabled() }"><div class="color-picker-mount"></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.fogContent.soyTemplateName = 'SketchUpTemplates.fogContent';
+}
+
+
+SketchUpTemplates.smoothContent = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="display-primary-control" data-bind="click: toggleSmooth, css: { \'disabled\': nothingToSmoothSoften() }"><div class="display-horizontal-group"><img data-bind="attr: {src: smoothImageSrc}"/><div class="display-vertical-group"><span>\u30A8\u30C3\u30B8\u3092\u30B9\u30E0\u30FC\u30B8\u30F3\u30B0</span><div class="display-secondary-detail" data-bind="text: smoothDetail"></div></div></div><div class="edge-toggle-check">' + SketchUpTemplates.checkbox({id: 'edge-smoothing-checkbox', checkedBinding: 'canSmooth', clickHandler: 'toggleSmooth'}, null, opt_ijData) + '</div></div><div class="display-primary-control" data-bind="click: toggleSoften, css: { \'disabled\': nothingToSmoothSoften() }"><div class="display-horizontal-group"><img data-bind="attr: {src: softenImageSrc}"/><div class="display-vertical-group"><span>\u540C\u4E00\u5E73\u9762\u3092\u30BD\u30D5\u30C8\u30CB\u30F3\u30B0\u3059\u308B</span><div class="display-secondary-detail" data-bind="text: softenDetail"></div></div></div><div class="edge-toggle-check">' + SketchUpTemplates.checkbox({id: 'edge-softening-checkbox', checkedBinding: 'canSoften', clickHandler: 'toggleSoften'}, null, opt_ijData) + '</div></div><div class="display-secondary-control" data-bind="css: { \'disabled\': nothingToSmoothSoften() || (!canSmooth() && !canSoften()) }"><div class="slider-label">\u89D2\u5EA6</div><input class="display-content-slider" data-bind="value: angle, event: { input: onSlideAngle($element.value) }" type="range" min="0" max="180" /><input class="edge-angle-input" type="number" data-bind="value: angle" min="0" max="180"/></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.smoothContent.soyTemplateName = 'SketchUpTemplates.smoothContent';
+}
+
+;
+// This file was automatically generated from dragarea.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.dragArea = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="dragarea visibility-none">\u3053\u3053\u306B\u30D5\u30A1\u30A4\u30EB\u3092\u30C9\u30ED\u30C3\u30D7</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.dragArea.soyTemplateName = 'SketchUpTemplates.dragArea';
+}
+
+;
+// This file was automatically generated from dwgdxf2dexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.dwgDxf2dExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8</div><div class="option-label">AutoCAD \u306E\u30D0\u30FC\u30B8\u30E7\u30F3</div><div class="export-option"><div class="acad-selector" data-bind="stopBinding: true"></div></div></div><div class="section"><div class="section-header">\u63CF\u753B\u5C3A\u5EA6\u3068\u30B5\u30A4\u30BA</div><div class="export-option" title="\u30D5\u30EB \u30B9\u30B1\u30FC\u30EB\u3067\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B\u4E26\u5217\u30D3\u30E5\u30FC\u3092\u6709\u52B9\u306B\u3057\u307E\u3059\u3002">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-2d-full-scale', checkedBinding: 'fullScale', clickHandler: 'undefined', enableBinding: 'enableFullScaleCheckbox()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-full-scale">\u30D5\u30EB \u30B9\u30B1\u30FC\u30EB (1:1)</label></div><div class="half-width"><div class="option-label">\u56F3\u9762\u4E0A</div><div class="export-option"><input type="text" data-bind="value: inDrawingString, enable: !fullScale(), event: {blur: onInDrawingOrInModelChanged}"></div><div class="option-label">\u30E2\u30C7\u30EB\u5185</div><div class="export-option"><input type="text" data-bind="value: inModelString, enable: !fullScale(), event: {blur: onInDrawingOrInModelChanged}"></div></div><div class="half-width"><div class="option-label">\u5E45</div><div class="export-option"><input type="text" data-bind="value: widthString, enable: !fullScale(), event: {blur: onWidthChanged}"></div><div class="option-label">\u9AD8\u3055</div><div class="export-option"><input type="text" data-bind="value: heightString, enable: !fullScale(), event: {blur: onHeightChanged}"></div></div></div><div class="section"><div class="section-header">\u5916\u5F62\u7DDA</div><div class="half-width"><div class="export-option"><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-2d-profile-type-none', name: 'dwg-dxf-2d-export-profile-type', checkedBinding: 'profileType', checkedValue: '"none"'}, null, opt_ijData) + '<label for="dwg-dxf-2d-profile-type-none" class="radio-button-label">\u306A\u3057</label></div><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-2d-profile-type-polyline', name: 'dwg-dxf-2d-export-profile-type', checkedBinding: 'profileType', checkedValue: '"polyline_with_width"'}, null, opt_ijData) + '<label for="dwg-dxf-2d-profile-type-polyline" class="radio-button-label">\u5E45\u4ED8\u304D\u30DD\u30EA\u30E9\u30A4\u30F3</label></div><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-2d-profile-type-wide', name: 'dwg-dxf-2d-export-profile-type', checkedBinding: 'profileType', checkedValue: '"wide_line_entities"', enableBinding: 'showWideLineEntities()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-profile-type-wide" class="radio-button-label">\u592A\u7DDA\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3</label></div></div></div><div class="half-width"><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-2d-profile-automatic', checkedBinding: 'profileAutomatic', clickHandler: 'undefined', enableBinding: 'profileLinesSelected()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-profile-automatic">\u81EA\u52D5\u5E45</label></div><div class="option-label">\u5E45</div><div class="export-option"><input type="text" data-bind="value: profileWidthString, enable: !profileAutomatic() && profileLinesSelected()"></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-2d-profile-on-layer', checkedBinding: 'profileOnLayer', clickHandler: 'undefined', enableBinding: 'profileLinesSelected()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-profile-on-layer">\u500B\u5225\u306E\u30EC\u30A4\u30E4\u306B\u5206\u96E2\u3059\u308B</label></div></div></div><div class="section"><div class="section-header">\u65AD\u9762\u7DDA</div><div class="half-width"><div class="export-option"><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-2d-export-section-line-none', name: 'dwg-dxf-2d-export-section-line-type', checkedBinding: 'exportSectionLineType', checkedValue: '"none"'}, null, opt_ijData) + '<label for="dwg-dxf-2d-export-section-line-none" class="radio-button-label">\u306A\u3057</label></div><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-2d-export-section-line-polyline', name: 'dwg-dxf-2d-export-section-line-type', checkedBinding: 'exportSectionLineType', checkedValue: '"polyline_with_width"'}, null, opt_ijData) + '<label for="dwg-dxf-2d-export-section-line-polyline" class="radio-button-label">\u5E45\u4ED8\u304D\u30DD\u30EA\u30E9\u30A4\u30F3</label></div><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-2d-export-section-line-wide', name: 'dwg-dxf-2d-export-section-line-type', checkedBinding: 'exportSectionLineType', checkedValue: '"wide_line_entities"', enableBinding: 'showWideLineEntities()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-export-section-line-wide" class="radio-button-label">\u592A\u7DDA\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3</label></div></div></div><div class="half-width"><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-2d-section-automatic', checkedBinding: 'sectionAutomatic', clickHandler: 'undefined', enableBinding: 'sectionLinesSelected()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-section-automatic">\u81EA\u52D5\u5E45</label></div><div class="option-label">\u5E45</div><div class="export-option"><input type="text" data-bind="value: sectionWidthString, enable: !sectionAutomatic() && sectionLinesSelected()"></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-2d-section-on-layer', checkedBinding: 'sectionOnLayer', clickHandler: 'undefined', enableBinding: 'sectionLinesSelected()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-section-on-layer">\u500B\u5225\u306E\u30EC\u30A4\u30E4\u306B\u5206\u96E2\u3059\u308B</label></div></div></div><div class="section"><div class="section-header">\u5EF6\u9577\u30A8\u30C3\u30B8</div><div class="half-width"><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-2d-show-extensions', checkedBinding: 'showExtensions', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-2d-show-extensions">\u5EF6\u9577\u30A8\u30C3\u30B8\u3092\u8868\u793A</label></div></div><div class="half-width"><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-2d-extension-automatic', checkedBinding: 'extensionAutomatic', clickHandler: 'undefined', enableBinding: 'showExtensions()'}, null, opt_ijData) + '<label for="dwg-dxf-2d-extension-automatic">\u81EA\u52D5\u9577</label></div><div class="option-label">\u9577\u3055</div><div class="export-option"><input  type="text" data-bind="value: extensionLengthString, enable: !extensionAutomatic() && showExtensions()"></div></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.dwgDxf2dExportOptions.soyTemplateName = 'SketchUpTemplates.dwgDxf2dExportOptions';
+}
+
+;
+// This file was automatically generated from dwgdxfexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.dwgDxfExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8</div><div class="option-label">AutoCAD \u306E\u30D0\u30FC\u30B8\u30E7\u30F3</div><div class="export-option"><div class="acad-selector" data-bind="stopBinding: true"></div></div></div><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-export-faces', checkedBinding: 'exportFacesFlag', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-export-faces">\u9762</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-export-edges', checkedBinding: 'exportEdges', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-export-edges">\u30A8\u30C3\u30B8</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-export-construction-geometry', checkedBinding: 'exportConstructionGeometry', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-export-construction-geometry">\u69CB\u7BC9\u30B8\u30AA\u30E1\u30C8\u30EA</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-export-text', checkedBinding: 'exportText', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-export-text">\u30C6\u30AD\u30B9\u30C8</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-export-dimensions', checkedBinding: 'exportDimensions', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-export-dimensions">\u5BF8\u6CD5</label></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.dwgDxfExportOptions.soyTemplateName = 'SketchUpTemplates.dwgDxfExportOptions';
+}
+
+;
+// This file was automatically generated from dwgdxfimport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.dwgDxfImportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="import-options"><div class="section"><div class="section-header">\u4F4D\u7F6E</div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-import-preserve-origin', checkedBinding: 'importPreserveOrigin', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-import-preserve-origin">\u63CF\u753B\u539F\u70B9\u3092\u7DAD\u6301\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-import-merge-coplanar-faces', checkedBinding: 'importMergeCoplanarFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-import-merge-coplanar-faces">\u540C\u4E00\u5E73\u9762\u4E0A\u306E\u9762\u3092\u30DE\u30FC\u30B8\u3059\u308B</label></div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-import-orient-faces', checkedBinding: 'importOrientFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="dwg-dxf-import-orient-faces">\u9762\u306E\u88CF\u8868\u3092\u7D71\u4E00\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u5C3A\u5EA6</div><div class="option-label">\u5358\u4F4D</div><div class="import-option"><div class="units-selector" data-bind="stopBinding: true"></div></div></div>' + SketchUpTemplates.importerButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.dwgDxfImportOptions.soyTemplateName = 'SketchUpTemplates.dwgDxfImportOptions';
+}
+
+;
+// This file was automatically generated from dwgdxfsectionexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.dwgDxfSectionExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8</div><div class="option-label">AutoCAD \u306E\u30D0\u30FC\u30B8\u30E7\u30F3</div><div class="export-option"><div class="acad-selector" data-bind="stopBinding: true"></div></div></div><div class="section"><div class="section-header">\u63CF\u753B\u5C3A\u5EA6\u3068\u30B5\u30A4\u30BA</div><div class="export-option" title="\u30D5\u30EB \u30B9\u30B1\u30FC\u30EB\u3067\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B\u4E26\u5217\u30D3\u30E5\u30FC\u3092\u6709\u52B9\u306B\u3057\u307E\u3059\u3002">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-section-full-scale', checkedBinding: 'fullScale', clickHandler: 'undefined', enableBinding: 'enableFullScaleCheckbox()'}, null, opt_ijData) + '<label for="dwg-dxf-section-full-scale">\u30D5\u30EB \u30B9\u30B1\u30FC\u30EB (1:1)</label></div><div class="half-width"><div class="option-label">\u56F3\u9762\u4E0A</div><div class="export-option"><input type="text" data-bind="value: inDrawingString, enable: !fullScale(), event: {blur: onInDrawingOrInModelChanged}"></div><div class="option-label">\u30E2\u30C7\u30EB\u5185</div><div class="export-option"><input type="text" data-bind="value: inModelString, enable: !fullScale(), event: {blur: onInDrawingOrInModelChanged}"></div></div><div class="half-width"><div class="option-label">\u5E45</div><div class="export-option"><input type="text" data-bind="value: widthString, enable: !fullScale(), event: {blur: onWidthChanged}"></div><div class="option-label">\u9AD8\u3055</div><div class="export-option"><input type="text" data-bind="value: heightString, enable: !fullScale(), event: {blur: onHeightChanged}"></div></div></div><div class="section"><div class="section-header">\u65AD\u9762\u7DDA</div><div class="half-width"><div class="export-option"><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-section-export-section-line-none', name: 'dwg-dxf-section-export-section-line-type', checkedBinding: 'exportSectionLineType', checkedValue: '"none"'}, null, opt_ijData) + '<label for="dwg-dxf-section-export-section-line-none" class="radio-button-label">\u306A\u3057</label></div><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-section-export-section-line-polyline', name: 'dwg-dxf-section-export-section-line-type', checkedBinding: 'exportSectionLineType', checkedValue: '"polyline_with_width"'}, null, opt_ijData) + '<label for="dwg-dxf-section-export-section-line-polyline" class="radio-button-label">\u5E45\u4ED8\u304D\u30DD\u30EA\u30E9\u30A4\u30F3</label></div><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-section-export-section-line-wide', name: 'dwg-dxf-section-export-section-line-type', checkedBinding: 'exportSectionLineType', checkedValue: '"wide_line_entities"', enableBinding: 'showWideLineEntities()'}, null, opt_ijData) + '<label for="dwg-dxf-section-export-section-line-wide" class="radio-button-label">\u592A\u7DDA\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3</label></div></div></div><div class="half-width"><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-section-section-automatic', checkedBinding: 'sectionAutomatic', clickHandler: 'undefined', enableBinding: 'sectionLinesSelected()'}, null, opt_ijData) + '<label for="dwg-dxf-section-section-automatic">\u81EA\u52D5\u5E45</label></div><div class="option-label">\u5E45</div><div class="export-option"><input type="text" data-bind="value: sectionWidthString, enable: !sectionAutomatic() && sectionLinesSelected()"></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'dwg-dxf-section-section-on-layer', checkedBinding: 'sectionOnLayer', clickHandler: 'undefined', enableBinding: 'sectionLinesSelected()'}, null, opt_ijData) + '<label for="dwg-dxf-section-section-on-layer">\u500B\u5225\u306E\u30EC\u30A4\u30E4\u306B\u5206\u96E2\u3059\u308B</label></div></div></div><div class="section"><div class="section-header">\u6295\u5F71</div><div class="export-option"><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-section-export-section-type-true-section', name: 'dwg-dxf-section-export-section-type', checkedBinding: 'exportSectionType', checkedValue: '"true_section"'}, null, opt_ijData) + '<label for="dwg-dxf-section-export-section-type-true-section" class="radio-button-label">\u771F\u65AD\u9762 (\u6B63\u5C04)</label></div><div>' + SketchUpTemplates.radioButton({id: 'dwg-dxf-section-export-section-type-screen-projection', name: 'dwg-dxf-section-export-section-type', checkedBinding: 'exportSectionType', checkedValue: '"screen_projection"'}, null, opt_ijData) + '<label for="dwg-dxf-section-export-section-type-screen-projection" class="radio-button-label">\u753B\u9762\u6620\u5199</label></div></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.dwgDxfSectionExportOptions.soyTemplateName = 'SketchUpTemplates.dwgDxfSectionExportOptions';
+}
+
+;
+// This file was automatically generated from entityinfo.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.entityInfoBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="entity-info browser" id="entity-info-browser-top" data-testid="entityInfoBrowser" style=""><div class="browser-header"><div class="title">\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3\u60C5\u5831</div><div class="browser-header-close" data-testid="entityInfoBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="loading-gif" style="display:none"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'loading.gif') + '" /></div><div class="collapsible-browser-contents collapsible-entity-info-contents"><div id="entity-info-content-container" class="entity-info-content browser-content"></div><div class="entity-info-content-container-overlay invisible"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.entityInfoBrowser.soyTemplateName = 'SketchUpTemplates.entityInfoBrowser';
+}
+
+
+SketchUpTemplates.entityInfoContents = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div id="entity-info-contents" class="entity-info-contents" data-testid="entityInfoPanel"><div class="entity-info-header"><div class="entity-info-header-text" data-bind="css: {\'entity-info-header-text-single-line\': numberInModel() == \'\'}"><div class="entity-info-title" data-bind="text: title" data-testid="entityInfo-title"></div><div class="entity-info-number-in-model" data-bind="if: numberInModel"><div data-bind="text: numberInModel"></div></div></div></div><div class="entity-info-body" data-bind="visible: selectionCount() > 0"><div data-bind="with: entityData"><div data-bind="foreach: fields"><div class="entity-info-field-outer"><div class="entity-info-label" data-bind="text: label"></div><input class="entity-info-input" type="text" data-bind="value: value, enable: editable() && !$root.locked(), css: {\'entity-info-input-not-editable\': !editable()}, event:{blur: $root.saveField.bind($root)}, inputOnEnter: null, attr: { \'data-testid\': \'entityInfo-\' + fieldType() }"/></div></div></div><div id="custom-fields"></div><div data-bind="with: entityData">' + ((opt_data.lockMaterials) ? '<div data-bind="if: commonMaterial">' : '<div data-bind="if: commonMaterial, click: $root.editCommonMaterial.bind($root)">') + '<div class="entity-info-label">\u30DE\u30C6\u30EA\u30A2\u30EB:</div><div class="entity-info-layer-material-container" data-bind=" css: {disabled: $root.locked}"><div class="entity-info-layer-material-icon" data-bind=" style: {backgroundImage: commonMaterial.thumbnail()}"></div><div class="entity-info-material-name" data-bind="text: commonMaterial.name()" data-testid="entityInfo-materialName"></div><div class="entity-info-material-remove" title="\u30C7\u30D5\u30A9\u30EB\u30C8\u306E\u30DE\u30C6\u30EA\u30A2\u30EB\u3092\u5272\u308A\u5F53\u3066\u308B" data-bind=" visible: commonMaterial.canRemoveMaterial, clickBubble: false, click: $root.removeCommonMaterial.bind($root)"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div></div>' + ((opt_data.lockMaterials) ? '<div data-bind="if: commonBackMaterial">' : '<div data-bind="if: commonBackMaterial, click: $root.editBackMaterial.bind($root)">') + '<div class="entity-info-label">\u80CC\u9762\u30DE\u30C6\u30EA\u30A2\u30EB:</div>' + ((opt_data.lockMaterials) ? '<div class="entity-info-back-material-container" data-bind=" css: {disabled: $root.locked}">' : '<div class="entity-info-back-material-container">') + '<div class="entity-info-layer-material-icon" data-bind=" style: {backgroundImage: commonBackMaterial.thumbnail}"></div><div class="entity-info-material-name" data-bind="text: commonBackMaterial.name"></div><div class="entity-info-material-remove" title="\u30C7\u30D5\u30A9\u30EB\u30C8\u306E\u30DE\u30C6\u30EA\u30A2\u30EB\u3092\u5272\u308A\u5F53\u3066\u308B" data-bind=" visible: commonBackMaterial.canRemoveMaterial, clickBubble: false, click: $root.removeBackMaterial.bind($root)"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div></div><div class="entity-info-layers-container"><div class="entity-info-label">\u73FE\u5728\u306E\u30BF\u30B0:</div><div class="entity-info-layer-material-container" data-bind=" css: {disabled: $root.locked}, click: $root.pickLayer.bind($root)"><div class="entity-info-layer-material-icon"><img data-bind="attr: {src: commonLayer.thumbnail}"/></div><div data-bind="text: commonLayer.name"></div></div></div></div></div><div class="browser-bottom-actions-bar" data-bind="visible: selectionCount() > 0"><div class="browser-bottom-bar-action" data-bind=" css: {disabled: lockedBottomBar}, attr: {title: isVisibleTooltip}, visible: toolbarVisibility.visibleButtonVisibility === true, click: toggleIsVisible"><img data-bind="attr: {src: isVisibleImageSrc}"></div><div class="browser-bottom-bar-action" data-bind=" attr: {title: isLockedTooltip}, visible: toolbarVisibility.lockButtonVisibility === true, click: toggleLocked"><img data-bind="attr: {src: lockedImageSrc}"></div><div class="browser-bottom-bar-action" data-bind=" css: {disabled: lockedBottomBar}, attr: {title: receivesShadowsTooltip}, visible: toolbarVisibility.receivesShadowsButtonVisibility === true, click: toggleReceivesShadows"><img data-bind="attr: {src: receivesShadowsImageSrc}"></div><div class="browser-bottom-bar-action" data-bind=" css: {disabled: lockedBottomBar}, attr: {title: castsShadowsTooltip}, visible: toolbarVisibility.castsShadowsButtonVisibility === true, click: toggleCastsShadows"><img data-bind="attr: {src: castsShadowsImageSrc}"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.entityInfoContents.soyTemplateName = 'SketchUpTemplates.entityInfoContents';
+}
+
+
+SketchUpTemplates.entityInfoEdgeContents = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="entity-info-edge-content" data-bind="with: edgeEntityInfoViewModel"><div class="entity-info-edge-content-toggle" data-bind="click: toggleSoften"><img data-bind="attr: {src: softenImageSrc}"><div data-bind="text: softenText"></div></div><div class="entity-info-edge-content-toggle" data-bind="click: toggleSmooth"><img data-bind="attr: {src: smoothImageSrc}"><div data-bind="text: smoothText"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.entityInfoEdgeContents.soyTemplateName = 'SketchUpTemplates.entityInfoEdgeContents';
+}
+
+
+SketchUpTemplates.entityInfoImageContents = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="entity-info-image-content" data-bind="with: imageEntityInfoViewModel"><div class="entity-info-image-width-field"><div class="entity-info-dimension-label">\u5E45</div>' + ((opt_data.widthHeightEditable) ? '<input type="text" data-bind=" value: width, event:{blur: setWidth}, inputOnEnter: null"/>' : '<input type="text" data-bind="value: width" disabled/>') + '</div>' + ((opt_data.widthHeightEditable) ? '<div class="entity-info-image-content-toggle" data-bind="click: toggleLockAspectRatio">' : '<div class="entity-info-image-content-toggle">') + '<img data-bind="attr: {src: lockAspectRatioImageSrc}"></div><div class="entity-info-image-height-field"><div class="entity-info-dimension-label">\u9AD8\u3055</div>' + ((opt_data.widthHeightEditable) ? '<input type="text" data-bind=" value: height, event:{blur: setHeight}, inputOnEnter: null"/>' : '<input type="text" data-bind="value: height" disabled/>') + '</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.entityInfoImageContents.soyTemplateName = 'SketchUpTemplates.entityInfoImageContents';
+}
+
+
+SketchUpTemplates.entityInfoSectionPlaneContents = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="entity-info-section-plane" data-bind="with: sectionPlaneInfoViewModel"><div class="entity-info-field-outer"><div class="entity-info-label">\u540D\u524D</div>' + ((opt_data.nameSymbolEditable) ? '<input class="entity-info-input" type="text" data-bind="event:{blur: setName}, value: name"/>' : '<input class="entity-info-input" type="text" data-bind="value: name" disabled/>') + '</div><div class="entity-info-field-outer"><div class="entity-info-label">\u8A18\u53F7</div>' + ((opt_data.nameSymbolEditable) ? '<input class="entity-info-section-plane-symbol-input" type="text" maxlength="3" size="3" data-bind="event:{blur: setSymbol}, value: symbol"/>' : '<input class="entity-info-section-plane-symbol-input" type="text" maxlength="3" size="3" data-bind="value: symbol" disabled/>') + '</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.entityInfoSectionPlaneContents.soyTemplateName = 'SketchUpTemplates.entityInfoSectionPlaneContents';
+}
+
+;
+// This file was automatically generated from exporters.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.exporterButtonSet = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="buttonset"><div class="secondary-action-button" data-bind="click: cancel" data-testid="exportOptions-cancelButton">\u30AD\u30E3\u30F3\u30BB\u30EB</div><div class="primary-action-button" data-bind="click: performPort" data-testid="exportOptions-exportButton">\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.exporterButtonSet.soyTemplateName = 'SketchUpTemplates.exporterButtonSet';
+}
+
+;
+// This file was automatically generated from fbxexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.fbxExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u5C3A\u5EA6</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'fbx-export-swap-yz', checkedBinding: 'swapYZ', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="fbx-export-swap-yz">YZ\u5EA7\u6A19\u3092\u4EA4\u63DB\u3059\u308B (Y\u8EF8\u4E0A\u5411\u304D)</label></div><div class="option-label">\u5358\u4F4D</div><div class="export-option"><div class="units-selector" data-bind="stopBinding: true"></div></div></div><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'fbx-export-triangulated-faces', checkedBinding: 'exportTriangulatedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="fbx-export-triangulated-faces">\u3059\u3079\u3066\u306E\u9762\u3092\u4E09\u89D2\u5F62\u5316\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'fbx-export-two-sided-faces', checkedBinding: 'exportDoubleSidedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="fbx-export-two-sided-faces">\u88CF\u9762\u3068\u8868\u9762\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'fbx-export-disconnected-faces', checkedBinding: 'exportSeparateDisconnectedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="fbx-export-disconnected-faces">\u9023\u7D50\u3055\u308C\u3066\u3044\u306A\u3044\u9762\u3092\u5206\u96E2\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'fbx-export-texture-maps', checkedBinding: 'exportTextureMaps', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="fbx-export-texture-maps">\u30C6\u30AF\u30B9\u30C1\u30E3 \u30DE\u30C3\u30D7\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.fbxExportOptions.soyTemplateName = 'SketchUpTemplates.fbxExportOptions';
+}
+
+;
+// This file was automatically generated from fontselector.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.fontSelector = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="font-selector"></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.fontSelector.soyTemplateName = 'SketchUpTemplates.fontSelector';
+}
+
+
+SketchUpTemplates.fontFaceSelect = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="select-widget"><div class="select-widget-selected-item"><div class="select-widget-selected-text" data-bind="click: onClick, css: {\'no-choice\': options().length === 1}, style: {fontFamily: currentDisplayed, fontStyle: style, fontWeight: weight}, text: displayText, visible: !isCustomInputVisible()"></div><input class="select-widget-custom-input" data-bind="css: {error: customInputError}, event: {keypress: onCustomInputKeyPress}, style: {fontFamily: currentDisplayed}, value: customInputText, valueUpdate: \'afterkeydown\', visible: isCustomInputVisible(), hasFocus: isCustomInputVisible()" /></div><div class="select-widget-list" data-bind="foreach: options, visible: areOptionsVisible"><div class="select-widget-option" data-bind="click: $parent.setOption.bind($parent, display), style: {fontFamily: value}, text: display, css: { \'selected-list-item\': $parent.currentValue() == value}"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.fontFaceSelect.soyTemplateName = 'SketchUpTemplates.fontFaceSelect';
+}
+
+;
+// This file was automatically generated from importers.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.importerButtonSet = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="buttonset"><div data-testId="importer-cancel" class="secondary-action-button" data-bind="click: cancel">\u30AD\u30E3\u30F3\u30BB\u30EB</div><div data-testId="importer-import" class="primary-action-button" data-bind="click: performPort">\u30A4\u30F3\u30DD\u30FC\u30C8</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.importerButtonSet.soyTemplateName = 'SketchUpTemplates.importerButtonSet';
+}
+
+;
+// This file was automatically generated from instructor.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.instructorBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="instructor browser" id="instructor-browser-top" style=""><div class="browser-header"><div class="title">\u30A4\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF</div><div class="browser-header-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="loading-gif" style="display:none"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'loading.gif') + '" /></div><div class="collapsible-browser-contents"><div id="instructor-content-container" class="instructor-content browser-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.instructorBrowser.soyTemplateName = 'SketchUpTemplates.instructorBrowser';
+}
+
+;
+// This file was automatically generated from kmzexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.kmzExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'kmz-export-hidden-geometry', checkedBinding: 'exportHiddenGeometry', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="kmz-export-hidden-geometry">\u975E\u8868\u793A\u306E\u30B8\u30AA\u30E1\u30C8\u30EA\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8</label></div></div><div class="section"><div class="section-header">\u30AF\u30EC\u30B8\u30C3\u30C8</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'kmz-export-author-attribution', checkedBinding: 'exportAuthorAttribution', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="kmz-export-author-attribution">\u30AF\u30EC\u30B8\u30C3\u30C8\u3092\u7DAD\u6301\u3059\u308B</label></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.kmzExportOptions.soyTemplateName = 'SketchUpTemplates.kmzExportOptions';
+}
+
+;
+// This file was automatically generated from label.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.label = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="in-model-text-edit" data-bind=" style: {\'visibility\': isFocused() ? \'visible\' : \'hidden\', \'left\': (100 * xRatio()) + \'%\', \'top\': (100 * yRatio()) + \'%\'}"><textarea wrap="off" data-bind=" value: text, hasFocus: isFocused, valueUpdate: \'afterkeydown\', event: {keydown: onKeydown}, style: {\'left\': leftOffset() + \'px\', \'fontSize\': fontSize() + \'px\', \'minHeight\': fontSize() + \'px\'}"></textarea></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.label.soyTemplateName = 'SketchUpTemplates.label';
+}
+
+;
+// This file was automatically generated from labeldetails.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.labelDetails = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="label-details"><div class="label-details-section"><div class="label-details-section-header">\u30D5\u30A9\u30F3\u30C8:</div><div class="face-selector-wrapper" data-bind="css: {invisible: hasCommonFont()}"></div><div class="font-selector-wrapper" data-bind="css: {invisible: !hasCommonFont()}"></div></div><div class="label-details-section" data-bind="if: canSetArrowType"><div class="label-details-section-header">\u77E2\u5370:</div><div class="option-set editable"><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.NONE), css: {selected: arrowType() === ArrowType.NONE}" title="\u306A\u3057">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-none'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.DOT), css: {selected: arrowType() === ArrowType.DOT}" title="\u70B9">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-dot'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.CLOSED), css: {selected: arrowType() === ArrowType.CLOSED}" title="\u9589\u77E2\u5370">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-closed'}, null, opt_ijData) + '</div><div class="button" data-bind="click: setArrowType.bind($data, ArrowType.OPEN), css: {selected: arrowType() === ArrowType.OPEN}" title="\u958B\u77E2\u5370">' + SketchUpTemplates.svgIcon({id: 'pnl-ei-dim-open'}, null, opt_ijData) + '</div></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.labelDetails.soyTemplateName = 'SketchUpTemplates.labelDetails';
+}
+
+;
+// This file was automatically generated from layers.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.layersBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="layers browser" id="layers-browser-top" style=""><div class="browser-header"><div class="title">\u30BF\u30B0</div><div class="browser-header-close" data-testid="layersBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="loading-gif" style="display:none"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'loading.gif') + '" /></div><div class="collapsible-browser-contents"><div class="layers-content browser-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.layersBrowser.soyTemplateName = 'SketchUpTemplates.layersBrowser';
+}
+
+
+SketchUpTemplates.layersContainer = function(opt_data, opt_ignored, opt_ijData) {
+  opt_data = opt_data || {};
+  return '<div class="layers-container"><div class="layers-filter"></div><div data-bind="foreach: layers" class="layers-list">' + SketchUpTemplates.layer(null, null, opt_ijData) + '</div>' + ((opt_data.isEditMode == false) ? '<div class="layer-picker-bottom-bar"><div class="secondary-action-button" data-bind="click: onLayerPicked.bind($root, null)">\u30AD\u30E3\u30F3\u30BB\u30EB</div></div>' : '') + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.layersContainer.soyTemplateName = 'SketchUpTemplates.layersContainer';
+}
+
+
+SketchUpTemplates.layer = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="layer-instance" data-bind="css: {\r\n            \'current-layer\': $data.id() === $root.selectedLayerId() }, click: $root.onLayerPicked.bind($root), clickBubble: false, visible: !$data.isFiltered()"><div class="layer-visible"><img data-bind="attr: {src: isHidden() ? \'' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_notvisible.svg') + '\' : \'' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_visible.svg') + '\'}, click: $root.onChangeVisibility.bind($root), clickBubble: false, style: {\'pointer-events\': (isActive() || !$root.isEditMode) ? \'none\': \'all\'}"/></div><div class="layer-thumbnail"><img data-bind="attr: {src: thumbnail}, click: $root.onChangeColor.bind($root), clickBubble: false, style: {\'pointer-events\': !$root.isEditMode ? \'none\': \'all\'}"></div><div class="layer-name" data-bind="attr: {title: name}, text: name, event: {click: $root.onRename.bind($root)}, clickBubble: false, style: {\'pointer-events\': (isDefaultLayer || !$root.isEditMode) ? \'none\': \'all\'}"></div><div class="layer-delete" data-bind="css: {\r\n              \'hide\': isActive() || isDefaultLayer || !$root.isEditMode}"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_close.svg') + '" data-bind="click: $root.onDelete.bind($root), clickBubble: false" title="\u30BF\u30B0\u3092\u524A\u9664" /></div><div class="layer-enable" data-bind="css: {\r\n              \'hide\': !$root.isEditMode, \'active-layer\': isActive()}"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'layer_active_layer.svg') + '" data-bind="click: $root.onMakeActive.bind($root), clickBubble: false" title="\u30A2\u30AF\u30C6\u30A3\u30D6\u306A\u30BF\u30B0\u3092\u4F5C\u6210" /></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.layer.soyTemplateName = 'SketchUpTemplates.layer';
+}
+
+;
+// This file was automatically generated from listfilter.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.listFilter = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="list-filter"><input type="search" name="search" rel="search" placeholder=""/></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.listFilter.soyTemplateName = 'SketchUpTemplates.listFilter';
+}
+
+;
+// This file was automatically generated from loadingspinner.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.loadingSpinner = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div data-testid="loadingSpinner" class="loading-gif"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'loading.gif') + '" /></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.loadingSpinner.soyTemplateName = 'SketchUpTemplates.loadingSpinner';
+}
+
+;
+// This file was automatically generated from look.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.look = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="look--inactive" data-bind="css: cssClass, click: onClick, with: notification"><div class="look__content" data-testid="look-notification"><span data-bind="foreach: segments"><span data-bind="if: href"><a data-bind="text: text, click: () => true, clickBubble: false, attr: { \'href\': href }" target="_blank"></a></span><span data-bind="ifnot: href"><span data-bind="text: text"></span></span>&nbsp;</span></div><div class="look-buttons" data-bind="foreach: buttons"><button data-bind="text: text, click: action, attr: { \'data-testid\': testId }"></button></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.look.soyTemplateName = 'SketchUpTemplates.look';
+}
+
+;
+// This file was automatically generated from materials.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.materialsBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="materials browser" id="materials-browser-top" data-testid="materials-browser" style=""><div class="browser-header"><div class="title">\u30DE\u30C6\u30EA\u30A2\u30EB</div><div class="browser-header-close" data-testid="materialsBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="collapsible-browser-contents">' + SketchUpTemplates.topActionsBar(null, null, opt_ijData) + '<div class="browser-content materials-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.materialsBrowser.soyTemplateName = 'SketchUpTemplates.materialsBrowser';
+}
+
+
+SketchUpTemplates.materialsBottomActionsBar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="browser-bottom-actions-bar" data-bind="visible: showActionBar()"><div class="browser-bottom-bar-action materials-purge-button" data-bind="click: purge, css: { \'purging\': isPurging() }" title="\u672A\u4F7F\u7528\u306E\u30DE\u30C6\u30EA\u30A2\u30EB\u3092\u524A\u9664"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'lyr_purge.svg') + '" /></div><div class="browser-bottom-bar-action" data-bind="click: togglePopupMenu" title="\u305D\u306E\u4ED6\u306E\u30AA\u30D7\u30B7\u30E7\u30F3\u3092\u8868\u793A"><svg class="icon" viewBox="0 0 32 32"><use xlink:href="#overflow-menu" /></svg></div><div class="action-bar-overflow" data-bind="css: {hidden: popupHidden}"><div class="action-bar-overflow-option" data-bind="click: setViewType.bind(this, VIEW_TYPE.LIST)"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'checkmark-icon.png') + '" class="check-mark" data-bind="style: {visibility: (viewType() === VIEW_TYPE.LIST ? \'visible\' : \'hidden\')}"/>\u8868\u793A - \u30EA\u30B9\u30C8</div><div class="action-bar-overflow-option" data-bind="click: setViewType.bind(this, VIEW_TYPE.DETAIL)"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'checkmark-icon.png') + '" class="check-mark" data-bind="style: {visibility: (viewType() === VIEW_TYPE.DETAIL ? \'visible\' : \'hidden\')}"/>\u8868\u793A - \u8A73\u7D30</div><div class="action-bar-overflow-option" data-bind="click: setViewType.bind(this, VIEW_TYPE.THUMBNAIL)"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'checkmark-icon.png') + '" class="check-mark" data-bind="style: {visibility: (viewType() === VIEW_TYPE.THUMBNAIL ? \'visible\' : \'hidden\')}"/>\u8868\u793A - \u30B5\u30E0\u30CD\u30A4\u30EB</div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.materialsBottomActionsBar.soyTemplateName = 'SketchUpTemplates.materialsBottomActionsBar';
+}
+
+
+SketchUpTemplates.materialPicker = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="material-picker"></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.materialPicker.soyTemplateName = 'SketchUpTemplates.materialPicker';
+}
+
+
+SketchUpTemplates.materialPickerSlideoutBottomBar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="material-picker-bottom-bar"><div class="secondary-action-button" data-bind="click: cancel">\u30AD\u30E3\u30F3\u30BB\u30EB</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.materialPickerSlideoutBottomBar.soyTemplateName = 'SketchUpTemplates.materialPickerSlideoutBottomBar';
+}
+
+
+SketchUpTemplates.materialCategory = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="expandable-category expandable"><div class="category-header"><div class="category-thumbnail"><img src="' + soy.$$escapeHtml(opt_ijData.THUMBNAIL_DATA_URL) + soy.$$escapeHtml(opt_data.materialCategory.thumbnail) + '"></div><div class="category-title">' + soy.$$escapeHtml(opt_data.materialCategory.title) + '</div><div class="expand-button"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div class="category-contents"></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.materialCategory.soyTemplateName = 'SketchUpTemplates.materialCategory';
+}
+
+
+SketchUpTemplates.materialThumbnail = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="material-instance" title="' + soy.$$escapeHtml(opt_data.name) + '"><img style="width:68px; height:68px;" src="' + soy.$$escapeHtml(opt_ijData.THUMBNAIL_DATA_URL) + soy.$$escapeHtml(opt_data.thumbnail) + '"></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.materialThumbnail.soyTemplateName = 'SketchUpTemplates.materialThumbnail';
+}
+
+;
+// This file was automatically generated from modelinfo.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.modelInfoBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="model-info browser" id="model-info-browser-top"><div class="browser-header"><div class="title">\u30E2\u30C7\u30EB\u60C5\u5831</div><div class="browser-header-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="collapsible-browser-contents collapsible-model-info-contents"><div id="model-info-content-container" class="model-info-content browser-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.modelInfoBrowser.soyTemplateName = 'SketchUpTemplates.modelInfoBrowser';
+}
+
+;
+// This file was automatically generated from modelinfotext.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.modelInfoText = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="model-info-text"><div class="section"><div class="section-header"><div class="title">\u30C7\u30D5\u30A9\u30EB\u30C8\u306E\u5BF8\u6CD5\u30B9\u30BF\u30A4\u30EB</div></div><div class="section-contents"><div class="dimension-options-wrapper"></div><div class="secondary-action-button" data-bind="click: applyDefaultStyleToAllDimensions">\u3059\u3079\u3066\u306E\u5BF8\u6CD5\u3092\u66F4\u65B0</div></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.modelInfoText.soyTemplateName = 'SketchUpTemplates.modelInfoText';
+}
+
+;
+// This file was automatically generated from modelinfounits.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.modelInfoUnits = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="units-top-container"><div class="section expandable" data-bind="css: {expanded: lengthSectionShown}"><div class="section-header" data-bind="click: toggleLengthSection"><div class="title">\u9577\u3055\u306E\u5358\u4F4D</div><div class="expand-button"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div class="section-contents"><div class="options-label">\u5F62\u5F0F:</div><div class="options-container" data-bind="foreach: imperialFormats"><span class="units-button" data-bind="text: $data.display, click: $parent.formatSelected.bind($parent), css: {\'selected\': $parent.format() === $data}"></span></div><div class="options-container" data-bind="foreach: metricFormats"><span class="units-button" data-bind="text: $data.display, click: $parent.formatSelected.bind($parent), css: {\'selected\': $parent.format() === $data}"></span></div><div class="options-label">\u7CBE\u5EA6:</div><div class="options-container" data-bind="foreach: availableLengthPrecisions"><span class="units-button" data-bind="text: $parent.isDecimalFormat() ? $data.display : $data.fractionalDisplay, click: $parent.lengthPrecisionSelected.bind($parent), css: {\'selected\': $parent.lengthPrecision() === $data}"></span></div><div class="option-toggle options-label" data-bind="click: toggleLengthSnapping"><div class="option-toggle-label">\u9577\u3055\u30B9\u30CA\u30C3\u30D7:</div>' + SketchUpTemplates.checkbox({id: 'length-snapping-checkbox', checkedBinding: 'lengthSnappingEnabled', clickHandler: 'toggleLengthSnapping'}, null, opt_ijData) + '</div><div class="options-label snap-length"><div class="option-toggle-label">\u30B9\u30CA\u30C3\u30D7\u9593\u9694:</div><input type="text" data-bind="value: snapLength, enable: lengthSnappingEnabled, event: {blur: lengthSnapSelected(snapLength())}, inputOnEnter: null"></div></div></div><div class="section expandable" data-bind="css: {expanded: angleSectionShown}"><div class="section-header" data-bind="click: toggleAngleSection"><div class="title">\u89D2\u5EA6\u306E\u5358\u4F4D</div><div class="expand-button"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div class="section-contents"><div class="options-label">\u7CBE\u5EA6:</div><div class="options-container" data-bind="foreach: availableAnglePrecisions"><span class="units-button" data-bind="text: $data.display, click: $parent.anglePrecisionSelected.bind($parent), css: {\'selected\': $parent.anglePrecision() === $data}"></span></div><div class="option-toggle options-label" data-bind="click: toggleAngleSnapping"><div class="option-toggle-label">\u89D2\u5EA6\u30B9\u30CA\u30C3\u30D7:</div>' + SketchUpTemplates.checkbox({id: 'angle-snapping-checkbox', checkedBinding: 'angleSnappingEnabled', clickHandler: 'toggleAngleSnapping'}, null, opt_ijData) + '</div><div class="options-container" data-bind="css: {disabled: !angleSnappingEnabled()}, foreach: snapAnglePoints"><span class="units-button" data-bind="text: $data + \'\u00B0\', click: $parent.angleSnapSelected.bind($parent), css: {\'selected\': $parent.snapAngle() === $data}"></span></div></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.modelInfoUnits.soyTemplateName = 'SketchUpTemplates.modelInfoUnits';
+}
+
+;
+// This file was automatically generated from objxsiexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.objExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u5C3A\u5EA6</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'obj-xsi-export-swap-yz', checkedBinding: 'swapYZ', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="obj-xsi-export-swap-yz">YZ\u5EA7\u6A19\u3092\u4EA4\u63DB\u3059\u308B (Y\u8EF8\u4E0A\u5411\u304D)</label></div><div class="option-label">\u5358\u4F4D</div><div class="export-option"><div class="units-selector" data-bind="stopBinding: true"></div></div></div><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'obj-xsi-export-triangulated-faces', checkedBinding: 'exportTriangulatedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="obj-xsi-export-triangulated-faces">\u3059\u3079\u3066\u306E\u9762\u3092\u4E09\u89D2\u5F62\u5316\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'obj-xsi-export-two-sided-faces', checkedBinding: 'exportDoubleSidedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="obj-xsi-export-two-sided-faces">\u88CF\u9762\u3068\u8868\u9762\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'obj-xsi-export-edges', checkedBinding: 'exportEdges', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="obj-xsi-export-edges">\u30A8\u30C3\u30B8\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u30DE\u30C6\u30EA\u30A2\u30EB</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'obj-xsi-export-texture-maps', checkedBinding: 'exportTextureMaps', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="obj-xsi-export-texture-maps">\u30C6\u30AF\u30B9\u30C1\u30E3 \u30DE\u30C3\u30D7\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.objExportOptions.soyTemplateName = 'SketchUpTemplates.objExportOptions';
+}
+
+;
+// This file was automatically generated from outliner.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.outlinerBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="outliner browser" id="outliner-browser-top" style=""><div class="browser-header"><div class="title">\u30A2\u30A6\u30C8\u30E9\u30A4\u30F3\u8868\u793A</div><div class="browser-header-close" data-testid="outlinerBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="collapsible-browser-contents collapsible-outliner-contents"><div class="js-outliner-tree-container outliner-tree-container browser-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.outlinerBrowser.soyTemplateName = 'SketchUpTemplates.outlinerBrowser';
+}
+
+;
+// This file was automatically generated from pdfexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.pdfExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30A4\u30E1\u30FC\u30B8 \u30B5\u30A4\u30BA</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'pdf-export-match-view-size', checkedBinding: 'matchViewSize', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="pdf-export-match-view-size">\u30D3\u30E5\u30FC \u30B5\u30A4\u30BA\u306B\u5408\u308F\u305B\u308B</label></div><div class="option-label">\u5E45</div><div class="option-linked"><div><div class="export-option"><input type="text" data-bind="value: widthString, enable: !matchViewSize()"></div><div class="option-label">\u9AD8\u3055</div><div class="export-option"><input type="text" data-bind="value: heightString, enable: !matchViewSize()"></div></div><svg class="icon toggle-lock-aspect-ratio-icon" viewBox="0 0 32 32" title="\u7E26\u6A2A\u6BD4\u3092\u30ED\u30C3\u30AF\u307E\u305F\u306F\u30ED\u30C3\u30AF\u89E3\u9664\u3002" data-bind="click: toggleAspectLock"><use xlink:href="" data-bind="attr: {\'xlink:href\': lockedAspectRatioIcon}" /></svg></div></div><div class="section"><div class="section-header">\u30A4\u30E1\u30FC\u30B8\u306E\u5C3A\u5EA6</div><div class="option-label">\u30A4\u30E1\u30FC\u30B8\u5185</div><div class="export-option"><input type="text" data-bind="value: inImageScaleString, enable: !isPerspective"></div><div class="option-label">\u30E2\u30C7\u30EB\u5185</div><div class="export-option"><input type="text" data-bind="value: inModelScaleString, enable: !isPerspective"></div></div><div class="section"><div class="section-header">\u7DDA\u306E\u54C1\u8CEA</div><div class="option-label">\u7DDA\u306E\u592A\u3055</div><div class="export-option"><div class="line-weight-selector-placeholder" data-bind="stopBinding: true"></div></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.pdfExportOptions.soyTemplateName = 'SketchUpTemplates.pdfExportOptions';
+}
+
+;
+// This file was automatically generated from radiobutton.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.radioButton = function(opt_data, opt_ignored, opt_ijData) {
+  return '<input type="radio" id="' + soy.$$escapeHtml(opt_data.id) + '" class="radio-button" name="' + soy.$$escapeHtml(opt_data.name) + '" data-testid="' + soy.$$escapeHtml(opt_data.testId) + '" data-bind="checked: ' + soy.$$escapeHtml(opt_data.checkedBinding) + ', checkedValue: ' + soy.$$escapeHtml(opt_data.checkedValue) + ', enable: ' + soy.$$escapeHtml(opt_data.enableBinding || true) + '" ><label class="radio-container" for="' + soy.$$escapeHtml(opt_data.id) + '"><div class="radio-button"></div></label>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.radioButton.soyTemplateName = 'SketchUpTemplates.radioButton';
+}
+
+;
+// This file was automatically generated from rightsidebar.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.sidebar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div draggable="false" class="right-sidebar-wrapper"><div class="right-sidebar-tabs-container" data-bind="css: {\'collapsed\': !isOpen(), \'browsers-hidden\': !isOpen() || isSlideoutOpen()}">' + SketchUpTemplates.hideSidebarTab(null, null, opt_ijData) + '<div class="right-sidebar-tabs-grouping">' + SketchUpTemplates.entityInfoTab(null, null, opt_ijData) + ((opt_data.outlinerAvailable) ? SketchUpTemplates.outlinerTab(null, null, opt_ijData) : '') + SketchUpTemplates.instructorTab(null, null, opt_ijData) + ((opt_data.warehouseAvailable) ? SketchUpTemplates.warehouseTab(null, null, opt_ijData) : '') + SketchUpTemplates.componentsTab(null, null, opt_ijData) + SketchUpTemplates.materialsTab(null, null, opt_ijData) + SketchUpTemplates.stylesTab(null, null, opt_ijData) + SketchUpTemplates.layersTab(null, null, opt_ijData) + SketchUpTemplates.newShadowsTab(opt_data, null, opt_ijData) + SketchUpTemplates.scenesTab(null, null, opt_ijData) + SketchUpTemplates.displayTab({shadowsAvailable: false}, null, opt_ijData) + SketchUpTemplates.modelInfoTab(null, null, opt_ijData) + ((opt_data.solidInspectorAvailable) ? SketchUpTemplates.solidInspectorTab(null, null, opt_ijData) : '') + '</div></div>' + SketchUpTemplates.rightSidebarResizeable(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.sidebar.soyTemplateName = 'SketchUpTemplates.sidebar';
+}
+
+
+SketchUpTemplates.viewerSidebar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div draggable="false" class="right-sidebar-wrapper"><div class="right-sidebar-tabs-container" data-bind="css: {\'collapsed\': !isOpen(), \'browsers-hidden\': !isOpen() || isSlideoutOpen()}">' + SketchUpTemplates.hideSidebarTab(null, null, opt_ijData) + '<div class="right-sidebar-tabs-grouping">' + SketchUpTemplates.entityInfoTab(null, null, opt_ijData) + SketchUpTemplates.scenesTab(null, null, opt_ijData) + SketchUpTemplates.layersTab(null, null, opt_ijData) + SketchUpTemplates.displayTab(null, null, opt_ijData) + SketchUpTemplates.stylesTab(null, null, opt_ijData) + SketchUpTemplates.modelInfoTab(null, null, opt_ijData) + SketchUpTemplates.shadowsTab(opt_data, null, opt_ijData) + '</div></div>' + SketchUpTemplates.rightSidebarResizeable(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.viewerSidebar.soyTemplateName = 'SketchUpTemplates.viewerSidebar';
+}
+
+
+SketchUpTemplates.hideSidebarTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="hide-sidebar-tab" data-testid="rightSidebar-closePanel" title="\u30D1\u30CD\u30EB\u3092\u9589\u3058\u307E\u3059"><svg viewBox="0 0 32 32"><use xlink:href="" data-bind="attr: {\'xlink:href\': \'#\' + ((isSlideoutOpen()) ? \'wi-close\' : \'tb-right-arrow\')}" /></svg></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.hideSidebarTab.soyTemplateName = 'SketchUpTemplates.hideSidebarTab';
+}
+
+
+SketchUpTemplates.entityInfoTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab entity-info-tab" data-testid="rightSidebar-entityInfo" title="\u30A8\u30F3\u30C6\u30A3\u30C6\u30A3\u60C5\u5831"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#entity_info" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.entityInfoTab.soyTemplateName = 'SketchUpTemplates.entityInfoTab';
+}
+
+
+SketchUpTemplates.outlinerTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab outliner-tab" data-testid="rightSidebar-outliner" title="\u30A2\u30A6\u30C8\u30E9\u30A4\u30F3\u8868\u793A"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#outliner" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.outlinerTab.soyTemplateName = 'SketchUpTemplates.outlinerTab';
+}
+
+
+SketchUpTemplates.instructorTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab instructor-tab"  data-testid="rightSidebar-instructor" title="\u30A4\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#instructor" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.instructorTab.soyTemplateName = 'SketchUpTemplates.instructorTab';
+}
+
+
+SketchUpTemplates.warehouseTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab warehouse-tab" data-testid="rightSidebar-warehouse" title="3D Warehouse"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#3D_warehouse" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.warehouseTab.soyTemplateName = 'SketchUpTemplates.warehouseTab';
+}
+
+
+SketchUpTemplates.componentsTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab components-tab" data-testid="rightSidebar-components" title="\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#component" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.componentsTab.soyTemplateName = 'SketchUpTemplates.componentsTab';
+}
+
+
+SketchUpTemplates.materialsTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab materials-tab" data-testid="rightSidebar-materials" title="\u30DE\u30C6\u30EA\u30A2\u30EB"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#materials" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.materialsTab.soyTemplateName = 'SketchUpTemplates.materialsTab';
+}
+
+
+SketchUpTemplates.stylesTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab styles-tab" data-testid="rightSidebar-styles" title="\u30B9\u30BF\u30A4\u30EB"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#styles" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.stylesTab.soyTemplateName = 'SketchUpTemplates.stylesTab';
+}
+
+
+SketchUpTemplates.layersTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab layers-tab" data-testid="rightSidebar-tags" title="\u30BF\u30B0"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#tags" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.layersTab.soyTemplateName = 'SketchUpTemplates.layersTab';
+}
+
+
+SketchUpTemplates.newShadowsTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab shadows-tab" data-testid="rightSidebar-shadows" title="\u5F71"><div class="tab-icon"><svg viewBox="' + soy.$$escapeHtml(opt_data.shadowsIcon.viewBox) + '"><use xlink:href="#' + soy.$$escapeHtml(opt_data.shadowsIcon.id) + '" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.newShadowsTab.soyTemplateName = 'SketchUpTemplates.newShadowsTab';
+}
+
+
+SketchUpTemplates.scenesTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab scenes-tab" data-testid="rightSidebar-scenes" title="\u30B7\u30FC\u30F3"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#scenes" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.scenesTab.soyTemplateName = 'SketchUpTemplates.scenesTab';
+}
+
+
+SketchUpTemplates.displayTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab display-tab" data-testid="rightSidebar-display" title="\u8868\u793A"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#display" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.displayTab.soyTemplateName = 'SketchUpTemplates.displayTab';
+}
+
+
+SketchUpTemplates.modelInfoTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab model-info-tab" data-testid="rightSidebar-modelInfo" title="\u30E2\u30C7\u30EB\u60C5\u5831"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#model_info" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.modelInfoTab.soyTemplateName = 'SketchUpTemplates.modelInfoTab';
+}
+
+
+SketchUpTemplates.solidInspectorTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab solid-inspector-tab" data-testid="rightSidebar-inspector" title="\u30BD\u30EA\u30C3\u30C9 \u30A4\u30F3\u30B9\u30DA\u30AF\u30BF"><div class="tab-icon"><svg viewBox="0 0 24 24"><use xlink:href="#solid_inspector" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.solidInspectorTab.soyTemplateName = 'SketchUpTemplates.solidInspectorTab';
+}
+
+
+SketchUpTemplates.shadowsTab = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tab shadows-tab" data-testid="viewer-shadowsButton" title="\u5F71"><div class="tab-icon"><svg viewBox="' + soy.$$escapeHtml(opt_data.shadowsIcon.viewBox) + '"><use xlink:href="#' + soy.$$escapeHtml(opt_data.shadowsIcon.id) + '" /></svg></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.shadowsTab.soyTemplateName = 'SketchUpTemplates.shadowsTab';
+}
+
+
+SketchUpTemplates.rightSidebarResizeable = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="right-sidebar-resizable-container" data-bind=" css: { \'collapsed\': !isOpen() }, style: { width: resizableContainerWidth() + \'px\' }"><div class="right-sidebar-container right-sidebar-container-hidden"></div><div class="right-sidebar-slideout" data-bind="css: { \'collapsed\': !isSlideoutOpen() }"><div class="title"></div><div class="content"></div></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.rightSidebarResizeable.soyTemplateName = 'SketchUpTemplates.rightSidebarResizeable';
+}
+
+;
+// This file was automatically generated from scenes.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.scenesContainer = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="scenes-container"><div class="scenes-divider"></div><div class="scenes-none-exist-message" data-bind="visible: scenes().length === 0">\u3053\u306E\u30E2\u30C7\u30EB\u306B\u306F\u30B7\u30FC\u30F3\u304C\u3042\u308A\u307E\u305B\u3093\u3002</div><div class="scenes-filter" data-bind="visible: scenes().length > 2"></div><div class="scenes-none-exist-message" data-bind="visible: allFiltered()">\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u4E00\u81F4\u3059\u308B\u3082\u306E\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093\u3067\u3057\u305F\u3002</div><div data-bind="foreach: scenes, event: {dragover: handleDragOverInContainer, drop: handleDrop}">' + SketchUpTemplates.scene(null, null, opt_ijData) + '</div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.scenesContainer.soyTemplateName = 'SketchUpTemplates.scenesContainer';
+}
+
+
+SketchUpTemplates.scene = function(opt_data, opt_ignored, opt_ijData) {
+  var output = '<div class="scene-instance-container expandable" data-bind="css: {\'expanded\': isExpanded, \'dragged-scene\': isBeingDragged, \'dragover-above\': hasDragOverAbove, \'dragover-below\': hasDragOverBelow}, visible: !$data.isFiltered()"><div class="scene-instance expandable-category" data-bind="event: {click: $root.selectScene.bind($root), dragstart: $root.handleDragStart.bind($root, $index), dragover: $root.handleDragOver.bind($root, $element.getBoundingClientRect(), $index), dragend: $root.handleDragEnd.bind($root)}, attr: {title: name, draggable: !$root.isReadOnlyMode && !$root.isFiltering() && isDraggable}, css: {\'selected-scene\': isSelected}"><div class="scene-thumbnail"><img data-bind="attr: {src: thumbnail}"></div><div class="scene-name category-title" data-bind="text: displayName, click: $root.isEditable() ? $root.onClickSceneName.bind($root) : $root.selectScene.bind($root), clickBubble: false"></div><div class="expand-button" data-bind="click: $root.onClickSceneExpander.bind($root), clickBubble: false, visible: $root.isEditable()"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div class="scene-details"><div class="scene-attributes-title">\u30B7\u30FC\u30F3\u306E\u5C5E\u6027:</div>';
+  var propertyTitle__soy1946 = '\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3\u306B\u542B\u3081\u308B';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy1946, checkedBinding: 'includeInAnimation', clickHandler: '$root.onIncludeInAnimation.bind($root)'}, null, opt_ijData) + '<textarea class="scene-description" placeholder="\u8AAC\u660E" data-bind="value: description" rows="3"></textarea>';
+  var heading__soy1959 = '\u4FDD\u5B58\u3059\u308B\u30D7\u30ED\u30D1\u30C6\u30A3:';
+  output += SketchUpTemplates.sceneProperties({heading: heading__soy1959}, null, opt_ijData) + '</div></div>';
+  return output;
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.scene.soyTemplateName = 'SketchUpTemplates.scene';
+}
+
+
+SketchUpTemplates.sceneProperties = function(opt_data, opt_ignored, opt_ijData) {
+  var output = '<div class="scene-properties-title">' + soy.$$escapeHtml(opt_data.heading) + '</div>';
+  var propertyTitle__soy1970 = '\u30AB\u30E1\u30E9\u306E\u4F4D\u7F6E';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy1970, checkedBinding: 'useCamera', clickHandler: '$root.onUseCamera.bind($root)'}, null, opt_ijData);
+  var propertyTitle__soy1978 = '\u30C8\u30C3\u30D7\u30EC\u30D9\u30EB\u975E\u8868\u793A\u30B8\u30AA\u30E1\u30C8\u30EA';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy1978, checkedBinding: 'useHiddenGeometry', clickHandler: '$root.onUseHiddenGeometry.bind($root)'}, null, opt_ijData);
+  var propertyTitle__soy1986 = '\u975E\u8868\u793A\u306E\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy1986, checkedBinding: 'useHiddenObjects', clickHandler: '$root.onUseHiddenObjects.bind($root)'}, null, opt_ijData);
+  var propertyTitle__soy1994 = '\u53EF\u8996\u306E\u30BF\u30B0';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy1994, checkedBinding: 'useLayerVisibility', clickHandler: '$root.onUseLayerVisibility.bind($root)'}, null, opt_ijData);
+  var propertyTitle__soy2002 = '\u30A2\u30AF\u30C6\u30A3\u30D6\u306A\u65AD\u9762\u5E73\u9762';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy2002, checkedBinding: 'useSectionPlanes', clickHandler: '$root.onUseSectionPlanes.bind($root)'}, null, opt_ijData);
+  var propertyTitle__soy2010 = '\u30B9\u30BF\u30A4\u30EB\u3068\u30D5\u30A9\u30B0';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy2010, checkedBinding: 'useRenderingOptions', clickHandler: '$root.onUseRenderingOptions.bind($root)'}, null, opt_ijData);
+  var propertyTitle__soy2018 = '\u5F71\u8A2D\u5B9A';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy2018, checkedBinding: 'useShadowInfo', clickHandler: '$root.onUseShadowInfo.bind($root)'}, null, opt_ijData);
+  var propertyTitle__soy2026 = '\u8EF8\u306E\u4F4D\u7F6E';
+  output += SketchUpTemplates.labeledCheckbox({title: propertyTitle__soy2026, checkedBinding: 'useAxes', clickHandler: ' $root.onUseAxes.bind($root)'}, null, opt_ijData);
+  return output;
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.sceneProperties.soyTemplateName = 'SketchUpTemplates.sceneProperties';
+}
+
+
+SketchUpTemplates.updateScenesDialog = function(opt_data, opt_ignored, opt_ijData) {
+  var output = '<div class="update-scene-container"><div class="scene-details"><div data-bind="foreach: sceneProperties">';
+  var heading__soy2036 = '\u66F4\u65B0\u3059\u308B\u30D7\u30ED\u30D1\u30C6\u30A3:';
+  output += SketchUpTemplates.sceneProperties({heading: heading__soy2036}, null, opt_ijData) + '</div></div></div>';
+  return output;
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.updateScenesDialog.soyTemplateName = 'SketchUpTemplates.updateScenesDialog';
+}
+
+
+SketchUpTemplates.sceneBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="scenes browser" id="scenes-browser-top"><div class="browser-header"><div class="title">\u30B7\u30FC\u30F3</div><div class="browser-header-close" data-testid="scenesBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="collapsible-browser-contents"><div class="scenes-content browser-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.sceneBrowser.soyTemplateName = 'SketchUpTemplates.sceneBrowser';
+}
+
+
+SketchUpTemplates.scenesBottomActionsBar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="browser-bottom-actions-bar"><div class="browser-bottom-bar-action add-scene-button" data-bind="click: addScene, css: {\'disabled-button\': isPlayingSlideShow()}" title="\u30B7\u30FC\u30F3\u3092\u8FFD\u52A0" ><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_add.svg') + '" /></div><div class="browser-bottom-bar-action update-scene-button" data-bind="click: updateScene, css: {\'disabled-button\': !hasExpandedOrSelectedScene() || isPlayingSlideShow()}" title="\u30B7\u30FC\u30F3\u3092\u66F4\u65B0" ><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_refresh.svg') + '" /></div><div class="browser-bottom-bar-action scenes-play-button" data-bind="click: handleSlideShowClick, css: {\'disabled-button\': scenes().length === 0}" title= "\u30B7\u30FC\u30F3\u306E\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3\u3092\u518D\u751F\u3057\u307E\u3059" ><img data-bind="attr: {src: isPlayingSlideShow() ? \'' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_stop_play.svg') + '\' : \'' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_play.svg') + '\' }" /></div><div class="browser-bottom-bar-action delete-scene-button" data-bind="click: deleteScene, css: {\'disabled-button\': !hasExpandedOrSelectedScene() || isPlayingSlideShow()}" title="\u30A2\u30AF\u30C6\u30A3\u30D6 \u30B7\u30FC\u30F3\u3092\u524A\u9664" ><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_delete.svg') + '" /></div><div class="browser-bottom-bar-action scene-settings-button" data-bind="click: onSettings" title="\u8A2D\u5B9A" ><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_settings.svg') + '" /></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.scenesBottomActionsBar.soyTemplateName = 'SketchUpTemplates.scenesBottomActionsBar';
+}
+
+
+SketchUpTemplates.sceneSettings = function(opt_data, opt_ignored, opt_ijData) {
+  var output = '<div class="scene-settings-container">';
+  var title__soy2085 = '\u30B7\u30FC\u30F3\u306E\u5207\u308A\u66FF\u3048\u3092\u6709\u52B9\u306B\u3059\u308B';
+  output += SketchUpTemplates.labeledCheckbox({title: title__soy2085, checkedBinding: 'enableTransitions', clickHandler: 'onEnableTransitions'}, null, opt_ijData) + '<div class="label" data-bind="css:{\'disabled\': !enableTransitions()}">\u79FB\u884C\u6642\u9593 (\u79D2):</div><div class="time-slider-container" data-bind="css:{ \'disabled\': !enableTransitions() }"><input class="time-slider" type="range" data-bind="value: transitionTime, event: {input: onTransitionTime(parseInt($element.value))}" min="0" max="100" /><input class="time-value" type="number" data-bind="value: transitionTime" min="0" max="100" /></div><div class="label">\u9045\u5EF6\u6642\u9593 (\u79D2):</div><div class="time-slider-container"><input class="time-slider" type="range" data-bind="value: delayTime, event: {input: onDelayTime(parseInt($element.value))}" min="0" max="100" /><input class="time-value" type="number" data-bind="value: delayTime" min="0" max="100" /></div></div>';
+  return output;
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.sceneSettings.soyTemplateName = 'SketchUpTemplates.sceneSettings';
+}
+
+
+SketchUpTemplates.styleUpdateWarning = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="style-update-warning-container"><div>\u8B66\u544A! \u30B7\u30FC\u30F3\u3092\u4F5C\u6210\u307E\u305F\u306F\u66F4\u65B0\u3057\u3088\u3046\u3068\u3057\u3066\u3044\u307E\u3059\u304C\u3001\u30B9\u30BF\u30A4\u30EB\u3078\u306E\u5909\u66F4\u304C\u4FDD\u5B58\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002<br><br>\u30B9\u30BF\u30A4\u30EB\u306E\u5909\u66F4\u306E\u51E6\u7406\u65B9\u6CD5\u3092\u6307\u5B9A\u3057\u3066\u304F\u3060\u3055\u3044\u3002</div><form><input type="radio" name="styleAction" data-bind="value: actionNew, checked: action"><span data-bind="click: onClick.bind($data, actionNew)"> \u65B0\u3057\u3044\u30B9\u30BF\u30A4\u30EB\u3068\u3057\u3066\u4FDD\u5B58\u3059\u308B\u3002</span></input><br><input type="radio" name="styleAction" data-bind="value: actionUpdate, checked: action"><span data-bind="click: onClick.bind($data, actionUpdate)"> \u9078\u629E\u3057\u305F\u30B9\u30BF\u30A4\u30EB\u3092\u66F4\u65B0\u3059\u308B\u3002</span></input><br><input type="radio" name="styleAction" data-bind="value: actionDoNothing, checked: action"><span data-bind="click: onClick.bind($data, actionDoNothing)"> \u5909\u66F4\u3092\u4FDD\u5B58\u3057\u306A\u3044\u3002</span></input><br></form></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.styleUpdateWarning.soyTemplateName = 'SketchUpTemplates.styleUpdateWarning';
+}
+
+;
+// This file was automatically generated from selectwidget.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.selectWidget = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="select-widget" data-bind="css: {\'open-up\': openUpwards}"><div class="select-widget-selected-item">' + ((opt_data.choiceEnabled) ? '<div class="select-widget-selected-text" data-bind="click: onClick, css: {\'no-choice\': options().length === 1}, text: displayText, visible: !isCustomInputVisible()">' : '<div class="select-widget-selected-text" data-bind="css: {\'no-choice\': true}, text: displayText, visible: !isCustomInputVisible()" disabled>') + '</div><input class="select-widget-custom-input" data-bind="css: {error: customInputError}, event: {keypress: onCustomInputKeyPress}, value: customInputText, valueUpdate: \'afterkeydown\', visible: isCustomInputVisible(), selectText: isCustomInputVisible()" /></div><div class="select-widget-list" data-bind="foreach: options, visible: areOptionsVisible"><div class="select-widget-option" data-bind="click: $parent.setOption.bind($parent, display), text: display, css: { \'selected-list-item\': $parent.currentValue() == value}"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.selectWidget.soyTemplateName = 'SketchUpTemplates.selectWidget';
+}
+
+;
+// This file was automatically generated from shadows.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.shadowsBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="layers browser" id="shadows-browser-top" style=""><div class="browser-header"><div class="title">\u5F71</div><div class="browser-header-close" data-testid="shadowsBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="collapsible-browser-contents"><div class="layers-content browser-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.shadowsBrowser.soyTemplateName = 'SketchUpTemplates.shadowsBrowser';
+}
+
+;
+// This file was automatically generated from solidinspector.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.solidInspectorBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="solid-inspector browser" id="solid-inspector-browser-top"><div class="browser-header"><div class="title">\u30BD\u30EA\u30C3\u30C9 \u30A4\u30F3\u30B9\u30DA\u30AF\u30BF</div><div class="browser-header-close" data-testid="solidInspector-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div><div class="collapsible-browser-contents collapsible-solid-inspector-contents"><div id="solid-inspector-content-container" class="solid-inspector-content browser-content"></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.solidInspectorBrowser.soyTemplateName = 'SketchUpTemplates.solidInspectorBrowser';
+}
+
+;
+// This file was automatically generated from standardviews.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.standardViewsContainer = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="standard-views-container"><div class="standard-views-tabs"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_view_perspective.svg') + '" data-bind="click: onPerspective, css:{\'standard-views-selected-tab\': isPerspective}, attr:{title: perspectiveTitle}" /><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_view_parallel.svg') + '" data-bind="click: onParallel, css:{\'standard-views-selected-tab\': isParallel}, attr:{title: parallelTitle}" /></div><div class="standard-views-tab-container"><div class="standard-views"></div><div class="standard-views-perspective-controls" data-bind="css:{\'standard-views-perspective-controls-expanded\': isPerspectiveControlsExpanded}, visible: isPerspectiveControlsVisible" ><svg class="standard-views-perspective-controls-expander" data-bind="click: onClickPerspectiveControls" viewBox="0 0 24 24" ><use xlink:href="#wi_chevron" /></svg><div class="standard-views-perspective-controls-contents" data-bind="visible: isPerspectiveControlsExpanded"><div class="bordered-button" data-bind="click: onTwoPtPerspective"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_view_two_point_perspective.svg') + '" /><span>2 \u70B9\u900F\u8996\u6CD5</span></div><div class="fov-label"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_view_fov.svg') + '" /><span>\u30D3\u30E5\u30FC\u306E\u30D5\u30A3\u30FC\u30EB\u30C9</span></div><div class="fov-container"><input class="fov-slider" type="range" data-bind="value: fieldOfViewAngle, event: {input: onChangeFov($element.value)}" min="1" max="120" /><input class="fov-value" type="number" data-bind="value: fieldOfViewAngle, event: {input: onChangeFov($element.value)}"" min="1" max="120" /></div></div></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.standardViewsContainer.soyTemplateName = 'SketchUpTemplates.standardViewsContainer';
+}
+
+;
+// This file was automatically generated from stlinsert.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.stlInsertOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="import-options"><div class="section"><div class="section-header">\u5C3A\u5EA6</div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'stl-import-preserve-origin', checkedBinding: 'preserveOrigin', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="stl-import-preserve-origin">\u63CF\u753B\u539F\u70B9\u3092\u7DAD\u6301\u3059\u308B</label></div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'stl-import-swap-yz', checkedBinding: 'swapYZ', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="stl-import-swap-yz">YZ\u5EA7\u6A19\u3092\u4EA4\u63DB\u3059\u308B (Y\u8EF8\u4E0A\u5411\u304D)</label></div><div class="option-label">\u5358\u4F4D</div><div class="import-option"><div class="units-selector" data-bind="stopBinding: true"></div></div></div><div class="buttonset"><div class="secondary-action-button" data-bind="click: cancel">\u30AD\u30E3\u30F3\u30BB\u30EB</div><div class="primary-action-button" data-bind="click: performPort">\u30A4\u30F3\u30DD\u30FC\u30C8</div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.stlInsertOptions.soyTemplateName = 'SketchUpTemplates.stlInsertOptions';
+}
+
+;
+// This file was automatically generated from stylebackgroundoptions.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.styleBackgroundOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="style-edit-category-contents style-edit-background"><label class="style-edit-option" data-bind="click: selectBackgroundColor"><div class="style-edit-option-title">\u80CC\u666F</div><button class="style-edit-color-button" data-bind="style: {backgroundColor: backgroundColor()}" data-testid="styleEdit-backgroundColorSelector"></button></label><label class="style-edit-option" for="style-edit-enable-sky"><div class="style-edit-option-title">\u7A7A</div>' + SketchUpTemplates.checkbox({id: 'style-edit-enable-sky', testId: 'styleEdit-skyEnabled', checkedBinding: 'isSkyEnabled', clickHandler: 'undefined'}, null, opt_ijData) + '<button class="style-edit-color-button style-sky-color-swatch" data-bind="click: selectSkyColor, style: {backgroundColor: skyColor()}" data-testid="styleEdit-skyColorSelector"></button></label><label class="style-edit-option" data-bind="click: selectHorizonColor"><div class="style-edit-option-title">\u6C34\u5E73</div><button class="style-edit-color-button" data-bind="style: {backgroundColor: horizonColor()}" data-testid="styleEdit-horizonColorSelector"></button></label><hr><label class="style-edit-option" for="style-edit-enable-ground"><div class="style-edit-option-title">\u5730\u9762</div>' + SketchUpTemplates.checkbox({id: 'style-edit-enable-ground', testId: 'styleEdit-groundEnabled', checkedBinding: 'isGroundEnabled', clickHandler: 'undefined'}, null, opt_ijData) + '<button class="style-edit-color-button style-ground-color-swatch" data-bind="click: selectGroundColor, style: {backgroundColor: groundColor()}" data-testid="styleEdit-groundColorSelector"></button></label><div class="style-edit-option section-title">\u900F\u660E\u5EA6</div><div class="style-edit-option section-title"><input class="display-content-slider ground-slider" data-bind="value: groundTransparency, enable: isGroundEnabled" type="range" min="' + soy.$$escapeHtml(opt_ijData.MIN_GROUND_TRANSPARENCY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_GROUND_TRANSPARENCY) + '" /><input data-bind="value: groundTransparency, enable: isGroundEnabled" min="' + soy.$$escapeHtml(opt_ijData.MIN_GROUND_TRANSPARENCY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_GROUND_TRANSPARENCY) + '" class="ground-value-input" type="number" /></div><label class="style-edit-option" for="style-edit-show-ground-from-below" data-bind="css: {disabled: !isGroundEnabled() }"><div class="style-edit-option-title">\u4E0B\u304B\u3089\u5730\u9762\u3092\u8868\u793A\u3059\u308B</div>' + SketchUpTemplates.checkbox({id: 'style-edit-show-ground-from-below', testId: 'styleEdit-showGroundFromBelow', checkedBinding: 'showGroundFromBelow', clickHandler: 'undefined', enableBinding: 'isGroundEnabled'}, null, opt_ijData) + '</label></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.styleBackgroundOptions.soyTemplateName = 'SketchUpTemplates.styleBackgroundOptions';
+}
+
+;
+// This file was automatically generated from styleedgeoptions.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.styleEdgeOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="style-edit-category-contents style-edit-edge"><label class="style-edit-option" for="style-edit-display-edges" data-bind="css: { disabled: !canSetEdges() }"><div class="style-edit-option-title">\u30A8\u30C3\u30B8</div>' + SketchUpTemplates.checkbox({id: 'style-edit-display-edges', testId: 'styleEdit-displayEdges', checkedBinding: 'displayEdges', clickHandler: 'undefined', enableBinding: 'canSetEdges'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-display-back-edges" data-bind="css: { disabled: !canDisplayBackEdges() }"><div class="style-edit-option-title">\u80CC\u9762\u30A8\u30C3\u30B8</div>' + SketchUpTemplates.checkbox({id: 'style-edit-display-back-edges', testId: 'styleEdit-displayBackEdges', checkedBinding: 'displayBackEdges', clickHandler: 'undefined', enableBinding: 'canDisplayBackEdges'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-profile-edges"><div class="style-edit-option-title">\u5916\u5F62\u7DDA</div><input type="number" min="' + soy.$$escapeHtml(opt_ijData.MIN_PROFILE_THICKNESS) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_PROFILE_THICKNESS) + '" data-bind="enable: displayProfileEdges, value: profileThickness" data-testid="styleEdit-profilesNumber" />' + SketchUpTemplates.checkbox({id: 'style-edit-profile-edges', testId: 'styleEdit-displayProfiles', checkedBinding: 'displayProfileEdges', clickHandler: 'undefined'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-depth-cue" data-bind="css: { disabled: !canModifyEdges() }"><div class="style-edit-option-title">\u30C7\u30D7\u30B9 \u30AD\u30E5\u30FC</div><input type="number" min="' + soy.$$escapeHtml(opt_ijData.MIN_DEPTH_CUE_THICKNESS) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_DEPTH_CUE_THICKNESS) + '" data-bind="enable: canModifyEdges() && displayDepthCue(), value: depthCueThickness" data-testid="styleEdit-depthCueNumber" />' + SketchUpTemplates.checkbox({id: 'style-edit-depth-cue', testId: 'styleEdit-displayDepthCue', checkedBinding: 'displayDepthCue', clickHandler: 'undefined', enableBinding: 'canModifyEdges'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-extension" data-bind="css: { disabled: !canModifyEdges() }"><div class="style-edit-option-title">\u5EF6\u9577\u30A8\u30C3\u30B8</div><input type="number" min="' + soy.$$escapeHtml(opt_ijData.MIN_EXTENSION_LENGTH) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_EXTENSION_LENGTH) + '" data-bind="enable: canModifyEdges() && displayExtension(), value: extensionLength" data-testid="styleEdit-extensionsNumber" />' + SketchUpTemplates.checkbox({id: 'style-edit-extension', testId: 'styleEdit-displayExtension', checkedBinding: 'displayExtension', clickHandler: 'undefined', enableBinding: 'canModifyEdges'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-endpoints" data-bind="css: { disabled: !canModifyEdges() }"><div class="style-edit-option-title">\u7AEF\u70B9</div><input type="number" min="' + soy.$$escapeHtml(opt_ijData.MIN_ENDPOINT_THICKNESS) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_ENDPOINT_THICKNESS) + '" data-bind="enable: canModifyEdges() && displayEndpoints(), value: endpointThickness" data-testid="styleEdit-endpointsNumber" />' + SketchUpTemplates.checkbox({id: 'style-edit-endpoints', testId: 'styleEdit-displayEndpoints', checkedBinding: 'displayEndpoints', clickHandler: 'undefined', enableBinding: 'canModifyEdges'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-jitter" data-bind="css: { disabled: !canModifyEdges() }"><div class="style-edit-option-title">\u7C97\u76EE</div>' + SketchUpTemplates.checkbox({id: 'style-edit-jitter', testId: 'styleEdit-displayJitter', checkedBinding: 'displayJitter', clickHandler: 'undefined', enableBinding: 'canModifyEdges'}, null, opt_ijData) + '</label><div class="style-edit-option"><div class="style-edit-option-title">\u8272</div><div class="style-edit-color-mode-select" data-bind="stopBinding: true"></div><button class="style-edit-color-button" data-bind="click: selectEdgeColor, style: {backgroundColor: edgeColor()}, visible: displayEdgeColor"></button></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.styleEdgeOptions.soyTemplateName = 'SketchUpTemplates.styleEdgeOptions';
+}
+
+;
+// This file was automatically generated from stylefaceoptions.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.styleFaceOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="style-edit-category-contents style-edit-faces"><label class="style-edit-option" data-bind="click: selectFrontFaceColor"><div class="style-edit-option-title">\u524D\u9762\u306E\u8272</div><div class="style-face-color-picker"><button class="style-edit-color-button" data-bind="style: {backgroundColor: frontFaceColor()}" data-testid="styleEdit-frontColorButton"></button></div></label><label class="style-edit-option" data-bind="click: selectBackFaceColor"><div class="style-edit-option-title">\u88CF\u9762\u306E\u8272</div><div class="style-face-color-picker"><button class="style-edit-color-button" data-bind="style: {backgroundColor: backFaceColor()}" data-testid="styleEdit-backColorButton"></button></div></label><hr><div class="style-edit-option section-title">\u8868\u793A\u30B9\u30BF\u30A4\u30EB</div><label for="style-edit-display-wireframe" class="style-edit-option" data-bind="css: {selected: displayStyle() === FaceDisplayStyle.WIREFRAME}" data-testid="styleEdit-wireframeSettings"><svg viewBox="0 0 32 32"><use xlink:href="#pnl_stl_wireframe" /></svg>' + SketchUpTemplates.radioButton({id: 'style-edit-display-wireframe', testId: 'styleEdit-displayWireframeButton', name: 'style-edit-display-style', checkedBinding: 'displayStyle', checkedValue: 'FaceDisplayStyle.WIREFRAME'}, null, opt_ijData) + '\u30EF\u30A4\u30E4\u30D5\u30EC\u30FC\u30E0</label><label for="style-edit-display-hiddenline" class="style-edit-option" data-bind="css: {selected: displayStyle() === FaceDisplayStyle.HIDDEN_LINE}" data-testid="styleEdit-hiddenLineSettings"><svg viewBox="0 0 32 32"><use xlink:href="#pnl_stl_hiddenline" /></svg>' + SketchUpTemplates.radioButton({id: 'style-edit-display-hiddenline', testId: 'styleEdit-displayHiddenLineButton', name: 'style-edit-display-style', checkedBinding: 'displayStyle', checkedValue: 'FaceDisplayStyle.HIDDEN_LINE'}, null, opt_ijData) + '\u96A0\u7DDA</label><label for="style-edit-display-shaded" class="style-edit-option" data-bind="css: {selected: displayStyle() === FaceDisplayStyle.SHADED}" data-testid="styleEdit-shadedSettings"><svg viewBox="0 0 32 32"><use xlink:href="#pnl_stl_shaded" /></svg>' + SketchUpTemplates.radioButton({id: 'style-edit-display-shaded', testId: 'styleEdit-displayShadedButton', name: 'style-edit-display-style', checkedBinding: 'displayStyle', checkedValue: 'FaceDisplayStyle.SHADED'}, null, opt_ijData) + '\u30B7\u30A7\u30FC\u30C7\u30A3\u30F3\u30B0</label><label for="style-edit-display-textures" class="style-edit-option" data-bind="css: {selected: displayStyle() === FaceDisplayStyle.TEXTURE}" data-testid="styleEdit-shadedTexturesSettings"><svg viewBox="0 0 32 32"><use xlink:href="#pnl_stl_textures" /></svg>' + SketchUpTemplates.radioButton({id: 'style-edit-display-textures', testId: 'styleEdit-displayShadedTexturesButton', name: 'style-edit-display-style', checkedBinding: 'displayStyle', checkedValue: 'FaceDisplayStyle.TEXTURE'}, null, opt_ijData) + '\u30B7\u30A7\u30FC\u30C7\u30A3\u30F3\u30B0 \u30C6\u30AF\u30B9\u30C1\u30E3</label><label for="style-edit-display-monochrome" class="style-edit-option" data-bind="css: {selected: displayStyle() === FaceDisplayStyle.MONOCHROME}" data-testid="styleEdit-monochromeSettings"><svg viewBox="0 0 32 32"><use xlink:href="#pnl_stl_monochrome" /></svg>' + SketchUpTemplates.radioButton({id: 'style-edit-display-monochrome', testId: 'styleEdit-displayMonochromeButton', name: 'style-edit-display-style', checkedBinding: 'displayStyle', checkedValue: 'FaceDisplayStyle.MONOCHROME'}, null, opt_ijData) + '\u30E2\u30CE\u30AF\u30ED</label><hr><label class="style-edit-option" for="style-edit-enable-transparency"><div class="style-edit-option-title">\u30DE\u30C6\u30EA\u30A2\u30EB\u306E\u900F\u660E\u5EA6</div>' + SketchUpTemplates.checkbox({id: 'style-edit-enable-transparency', testId: 'styleEdit-enableTransparency', checkedBinding: 'materialTransparency', clickHandler: 'undefined', enableBinding: 'isTransparencyCheckboxEnabled'}, null, opt_ijData) + '</label><div class="style-edit-option section-title">\u900F\u660E\u306E\u8CEA</div><label for="style-edit-transparency-faster" class="style-edit-option transparency-option">' + SketchUpTemplates.radioButton({id: 'style-edit-transparency-faster', testId: 'styleEdit-transparencyFaster', name: 'style-edit-transparency-quality', checkedBinding: 'transparencyQuality', checkedValue: '0', enableBinding: 'isTransparencyQualityEnabled'}, null, opt_ijData) + '\u9AD8\u901F</label><label for="style-edit-transparency-nicer" class="style-edit-option transparency-option">' + SketchUpTemplates.radioButton({id: 'style-edit-transparency-nicer', testId: 'styleEdit-transparencyNicer', name: 'style-edit-transparency-quality', checkedBinding: 'transparencyQuality', checkedValue: '1', enableBinding: 'isTransparencyQualityEnabled'}, null, opt_ijData) + '\u9AD8\u54C1\u8CEA</label><hr><label for="style-edit-enable-xray" class="style-edit-option"><svg viewBox="0 0 32 32"><use xlink:href="#pnl_stl_xray" /></svg><div class="style-edit-option-title">X \u7DDA</div>' + SketchUpTemplates.checkbox({id: 'style-edit-enable-xray', testId: 'styleEdit-enableXray', checkedBinding: 'isXrayEnabled', clickHandler: 'undefined', enableBinding: 'isXrayCheckboxEnabled'}, null, opt_ijData) + '</label><div class="style-edit-option section-title">X \u7DDA\u4E0D\u900F\u660E\u5EA6</div><div class="style-edit-option section-title"><input class="display-content-slider xray-slider" data-bind="value: xrayOpacity, enable: isXrayOpacityEnabled" type="range" min="' + soy.$$escapeHtml(opt_ijData.MIN_XRAY_OPACITY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_XRAY_OPACITY) + '" /><input data-bind="value: xrayOpacity, enable: isXrayOpacityEnabled" min="' + soy.$$escapeHtml(opt_ijData.MIN_XRAY_OPACITY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_XRAY_OPACITY) + '" class="xray-value-input" type="number" /></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.styleFaceOptions.soyTemplateName = 'SketchUpTemplates.styleFaceOptions';
+}
+
+;
+// This file was automatically generated from stylemodeloptions.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.styleModelOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="style-edit-category-contents style-edit-model"><label class="style-edit-option" data-bind="click: selectSelectedColor"><div class="style-edit-option-title">\u9078\u629E</div><div><button class="style-edit-color-button" data-bind="style: {backgroundColor: selectedColor()}" data-testid="styleEdit-selectedColor"></button></div></label><label class="style-edit-option" data-bind="click: selectLockedColor"><div class="style-edit-option-title">\u30ED\u30C3\u30AF</div><div><button class="style-edit-color-button" data-bind="style: {backgroundColor: lockedColor()}" data-testid="styleEdit-backgroundColor"></button></div></label><label class="style-edit-option" data-bind="click: selectGuideColor"><div class="style-edit-option-title">\u30AC\u30A4\u30C9</div><div><button class="style-edit-color-button" data-bind="style: {backgroundColor: guideColor()}" data-testid="styleEdit-guidesColor"></button></div></label><label class="style-edit-option" data-bind="click: selectInactiveSectionColor"><div class="style-edit-option-title">\u30A2\u30AF\u30C6\u30A3\u30D6\u3067\u306A\u3044\u65AD\u9762</div><div><button class="style-edit-color-button" data-bind="style: {backgroundColor: inactiveSectionColor()}" data-testid="styleEdit-inactiveColor"></button></div></label><label class="style-edit-option" data-bind="click: selectActiveSectionColor"><div class="style-edit-option-title">\u30A2\u30AF\u30C6\u30A3\u30D6\u306A\u65AD\u9762</div><div><button class="style-edit-color-button" data-bind="style: {backgroundColor: activeSectionColor()}" data-testid="styleEdit-activeSectionColor"></button></div></label><label class="style-edit-option" data-bind="click: selectSectionFillColor"><div class="style-edit-option-title">\u65AD\u9762\u5857\u308A\u3064\u3076\u3057</div><div><button class="style-edit-color-button" data-bind="style: {backgroundColor: sectionFillColor()}" data-testid="styleEdit-sectionFillColor"></button></div></label><label class="style-edit-option" data-bind="click: selectSectionLineColor"><div class="style-edit-option-title">\u65AD\u9762\u7DDA</div><div><button class="style-edit-color-button" data-bind="style: {backgroundColor: sectionLineColor()}" data-testid="styleEdit-sectionLineColor"></button></div></label><div class="style-edit-option"><div class="style-edit-option-title">\u65AD\u9762\u7DDA\u306E\u5E45</div><div><input data-bind="value: sectionLineWidth" type="number" min="' + soy.$$escapeHtml(opt_ijData.MIN_SECTION_LINE_WIDTH) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_SECTION_LINE_WIDTH) + '" data-testid="styleEdit-sectionLineWidth"></div></div><hr><label class="style-edit-option" for="style-edit-hidden-geometry"><div class="style-edit-option-title">\u96A0\u3057\u30B8\u30AA\u30E1\u30C8\u30EA</div>' + SketchUpTemplates.checkbox({id: 'style-edit-hidden-geometry', testId: 'styleEdit-enableHiddenGeometry', checkedBinding: 'hiddenGeometry', clickHandler: 'undefined'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-color-by-layer"><div class="style-edit-option-title">\u30BF\u30B0\u306E\u8272</div>' + SketchUpTemplates.checkbox({id: 'style-edit-color-by-layer', testId: 'styleEdit-enableColorByLayer', checkedBinding: 'colorByLayer', clickHandler: 'undefined'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-guides"><div class="style-edit-option-title">\u30AC\u30A4\u30C9</div>' + SketchUpTemplates.checkbox({id: 'style-edit-guides', testId: 'styleEdit-enableEditGuides', checkedBinding: 'guides', clickHandler: 'undefined'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-model-axes"><div class="style-edit-option-title">\u30E2\u30C7\u30EB\u8EF8</div>' + SketchUpTemplates.checkbox({id: 'style-edit-model-axes', testId: 'styleEdit-enableModelAxes', checkedBinding: 'modelAxes', clickHandler: 'undefined'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-section-planes"><div class="style-edit-option-title">\u65AD\u9762\u5E73\u9762</div>' + SketchUpTemplates.checkbox({id: 'style-edit-section-planes', testId: 'styleEdit-enableSectionPlanes', checkedBinding: 'sectionPlanes', clickHandler: 'undefined'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-section-cuts"><div class="style-edit-option-title">\u65AD\u9762\u30AB\u30C3\u30C8</div>' + SketchUpTemplates.checkbox({id: 'style-edit-section-cuts', testId: 'styleEdit-enableSectionCuts', checkedBinding: 'sectionCuts', clickHandler: 'undefined'}, null, opt_ijData) + '</label><label class="style-edit-option" for="style-edit-section-fill"><div class="style-edit-option-title">\u65AD\u9762\u5857\u308A\u3064\u3076\u3057</div>' + SketchUpTemplates.checkbox({id: 'style-edit-section-fill', testId: 'styleEdit-enableSectionFill', checkedBinding: 'sectionFill', clickHandler: 'undefined'}, null, opt_ijData) + '</label><!-- These options should be disabled untils SKIT-1421 is complete<hr><label class="style-edit-option" for="style-edit-foreground-photo"><div class="style-edit-option-title">\u524D\u666F\u5199\u771F</div>' + SketchUpTemplates.checkbox({id: 'style-edit-foreground-photo', checkedBinding: 'foregroundPhoto', clickHandler: 'undefined'}, null, opt_ijData) + '</label><div class="style-edit-option section-title">\u4E0D\u900F\u660E\u5EA6</div><div class="style-edit-option section-title"><input class="display-content-slider opacity-slider" data-bind="value: foregroundPhotoOpacity, enable: foregroundPhoto" type="range" min="' + soy.$$escapeHtml(opt_ijData.MIN_FOREGROUND_PHOTO_OPACITY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_FOREGROUND_PHOTO_OPACITY) + '" /><input data-bind="value: foregroundPhotoOpacity, enable: foregroundPhoto" min="' + soy.$$escapeHtml(opt_ijData.MIN_FOREGROUND_PHOTO_OPACITY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_FOREGROUND_PHOTO_OPACITY) + '" class="opacity-value-input" type="number" /></div><label class="style-edit-option" for="style-edit-background-photo"><div class="style-edit-option-title">\u80CC\u666F\u5199\u771F</div>' + SketchUpTemplates.checkbox({id: 'style-edit-background-photo', checkedBinding: 'backgroundPhoto', clickHandler: 'undefined'}, null, opt_ijData) + '</label><div class="style-edit-option section-title">\u4E0D\u900F\u660E\u5EA6</div><div class="style-edit-option section-title"><input class="display-content-slider opacity-slider" data-bind="value: backgroundPhotoOpacity, enable: backgroundPhoto" type="range" min="' + soy.$$escapeHtml(opt_ijData.MIN_BACKGROUND_PHOTO_OPACITY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_BACKGROUND_PHOTO_OPACITY) + '" /><input data-bind="value: backgroundPhotoOpacity, enable: backgroundPhoto" min="' + soy.$$escapeHtml(opt_ijData.MIN_BACKGROUND_PHOTO_OPACITY) + '" max="' + soy.$$escapeHtml(opt_ijData.MAX_BACKGROUND_PHOTO_OPACITY) + '" class="opacity-value-input" type="number" /></div>--></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.styleModelOptions.soyTemplateName = 'SketchUpTemplates.styleModelOptions';
+}
+
+;
+// This file was automatically generated from styles.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.stylesBrowser = function(opt_data, opt_ignored, opt_ijData) {
+  var output = '<div class="styles browser" id="styles-browser-top" data-testid="styles-browser" style=""><div class="browser-header"><div class="title">\u30B9\u30BF\u30A4\u30EB</div><div class="browser-header-close" data-testid="stylesBrowser-close"><svg viewBox="0 0 32 32"><use xlink:href="#wi-close" /></svg></div></div>';
+  if (opt_data.tabbedContentsAvailable) {
+    var stylesHomeTabTitle__soy2641 = '\u30E2\u30C7\u30EB\u5185';
+    var stylesBrowseTabTitle__soy2645 = 'Browse';
+    output += SketchUpTemplates.tabbedBrowserContents({homeTabTitle: stylesHomeTabTitle__soy2641, browseTabTitle: stylesBrowseTabTitle__soy2645, homeTabIsSelected: true, hasEditControls: true, browserContentClass: 'styles-content'}, null, opt_ijData);
+  } else {
+    output += SketchUpTemplates.topActionsBar(null, null, opt_ijData) + '<div class="browser-content styles-content" />';
+  }
+  output += '</div>';
+  return output;
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.stylesBrowser.soyTemplateName = 'SketchUpTemplates.stylesBrowser';
+}
+
+
+SketchUpTemplates.removeWatermarkButton = function(opt_data, opt_ignored, opt_ijData) {
+  return '<button class="remove-watermark-button secondary-action-button">SketchUp \u306E\u900F\u304B\u3057\u3092\u524A\u9664</button>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.removeWatermarkButton.soyTemplateName = 'SketchUpTemplates.removeWatermarkButton';
+}
+
+
+SketchUpTemplates.stylesBottomActionsBar = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="browser-bottom-actions-bar"><div class="browser-bottom-bar-action styles-copy-button" data-bind="click: createStyleFromActive" data-testid="rightSideBar-copyStyle" title="\u30A2\u30AF\u30C6\u30A3\u30D6\u306A\u30B9\u30BF\u30A4\u30EB\u306E\u30B3\u30D4\u30FC\u3092\u4F5C\u6210"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_add.svg') + '" /></div><div class="browser-bottom-bar-action styles-purge-button" data-bind="click: purge, css: { \'purging\': isPurging() }" title="\u672A\u4F7F\u7528\u306E\u30B9\u30BF\u30A4\u30EB\u3092\u524A\u9664"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'lyr_purge.svg') + '" /></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.stylesBottomActionsBar.soyTemplateName = 'SketchUpTemplates.stylesBottomActionsBar';
+}
+
+
+SketchUpTemplates.styleCategory = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="expandable-category expandable"><div class="category-header"><div class="category-thumbnail"><img src="' + soy.$$escapeHtml(opt_ijData.THUMBNAIL_DATA_URL) + soy.$$escapeHtml(opt_data.styleCategory.thumbnail) + '"></div><div class="category-title">' + soy.$$escapeHtml(opt_data.styleCategory.title) + '</div><div class="expand-button"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div class="category-contents"></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.styleCategory.soyTemplateName = 'SketchUpTemplates.styleCategory';
+}
+
+
+SketchUpTemplates.style = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="material-instance" data-testid="style-instance"><img style="width:68px; height: 68px;"' + ((opt_data.style.hasThumbnail) ? 'src="' + soy.$$escapeHtml(opt_ijData.THUMBNAIL_DATA_URL) + soy.$$escapeHtml(opt_data.style.thumbnail) + '"' : 'src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_Styles.svg') + '"') + 'title="' + soy.$$escapeHtml(opt_data.style.name) + '" ></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.style.soyTemplateName = 'SketchUpTemplates.style';
+}
+
+
+SketchUpTemplates.editStyle = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="style-edit-maskable-container"><div class="style-edit-container js-style-edit"><div class="style-edit-contents"><img class="style-edit-thumbnail" data-bind="attr:{src: \'' + soy.$$escapeHtml(opt_ijData.THUMBNAIL_DATA_URL) + '\' + thumbnailUrl()}"><div class="style-edit-field-outer"><label>\u30B9\u30BF\u30A4\u30EB\u540D:<div class="error-text" data-bind="if: nameStatus() === StyleNameStatus.IS_DUPLICATE">\u56FA\u6709\u306E\u30B9\u30BF\u30A4\u30EB\u540D\u3092\u4F7F\u7528\u3057\u3066\u304F\u3060\u3055\u3044</div><div class="error-text" data-bind="if: nameStatus() === StyleNameStatus.IS_EMPTY">\u3053\u306E\u30B9\u30BF\u30A4\u30EB\u306B\u540D\u524D\u3092\u4ED8\u3051\u3066\u304F\u3060\u3055\u3044</div><input type="text" class="style-name-input" data-bind="value: name, valueUpdate: \'keyup\', event:{blur: setName, keydown: onKeyDown}" /><label></div><div class="style-edit-options" data-testid="stylesBrowser-edgeSettings"><div class="style-edit-category" data-bind="css: {expanded: edgeOptionsExpanded}"><div class="style-edit-category-header" data-bind="click: toggleEdgeOptions"><div class="style-edit-category-header-title">\u30A8\u30C3\u30B8\u8A2D\u5B9A</div><div class="expand-icon"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div data-bind="stopBinding: true">' + SketchUpTemplates.styleEdgeOptions(null, null, opt_ijData) + '</div></div></div><div class="style-edit-options" data-testid="stylesBrowser-faceSettings"><div class="style-edit-category" data-bind="css: {expanded: faceOptionsExpanded}"><div class="style-edit-category-header" data-bind="click: toggleFaceOptions"><div class="style-edit-category-header-title">\u9762\u8A2D\u5B9A</div><div class="expand-icon"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div data-bind="stopBinding: true">' + SketchUpTemplates.styleFaceOptions(null, null, opt_ijData) + '</div></div></div><div class="style-edit-options" data-testid="stylesBrowser-backgroundSettings"><div class="style-edit-category" data-bind="css: {expanded: backgroundOptionsExpanded}"><div class="style-edit-category-header" data-bind="click: toggleBackgroundOptions"><div class="style-edit-category-header-title">\u80CC\u666F\u8A2D\u5B9A</div><div class="expand-icon"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div data-bind="stopBinding: true">' + SketchUpTemplates.styleBackgroundOptions(null, null, opt_ijData) + '</div></div></div><div class="style-edit-options" data-testid="stylesBrowser-modelingSettings"><div class="style-edit-category" data-bind="css: {expanded: modelOptionsExpanded}"><div class="style-edit-category-header" data-bind="click: toggleModelOptions"><div class="style-edit-category-header-title">\u30E2\u30C7\u30EA\u30F3\u30B0\u8A2D\u5B9A</div><div class="expand-icon"><svg class="icon" viewBox="0 0 24 24"><use xlink:href="#wi_chevron" /></svg></div></div><div data-bind="stopBinding: true">' + SketchUpTemplates.styleModelOptions(null, null, opt_ijData) + '</div></div></div></div><div class="bottom-actions-bar"><div class="primary-action-button" data-bind="click: onDone, visible: nameStatus() === StyleNameStatus.IS_VALID" data-testid="styleEdit-done">Done</div><div class="primary-action-button button-disabled" data-bind="visible: nameStatus() !== StyleNameStatus.IS_VALID">Done</div><div class="secondary-action-button" data-bind="click: onCancel" data-testid="styleEdit-cancel">Cancel</div></div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.editStyle.soyTemplateName = 'SketchUpTemplates.editStyle';
+}
+
+;
+// This file was automatically generated from svgIcon.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.svgIcon = function(opt_data, opt_ignored, opt_ijData) {
+  return '<svg viewBox="0 0 32 32"><use xlink:href="#' + soy.$$escapeHtml(opt_data.id) + '" /></svg>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.svgIcon.soyTemplateName = 'SketchUpTemplates.svgIcon';
+}
+
+;
+// This file was automatically generated from tabswidget.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.tabsWidget = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="tabs-widget"><div class="tabs-widget-header" data-bind="foreach: tabHeaders_"><div class="tabs-widget-tab" data-bind="attr: { title: title }, click: select, css: { selected: isSelected }"><img data-bind="attr: { src: imageSrc }" /></div></div><div class="tabs-widget-contents"></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.tabsWidget.soyTemplateName = 'SketchUpTemplates.tabsWidget';
+}
+
+
+SketchUpTemplates.sidebarTabs = function(opt_data, opt_ignored, opt_ijData) {
+  var output = '<div class="sidebar-tab-bar">';
+  var tabList2751 = opt_data.tabPanes;
+  var tabListLen2751 = tabList2751.length;
+  for (var tabIndex2751 = 0; tabIndex2751 < tabListLen2751; tabIndex2751++) {
+    var tabData2751 = tabList2751[tabIndex2751];
+    output += '<div class="sidebar-tab-bar-tab" data-name="' + soy.$$escapeHtml(tabData2751.name) + '">' + ((tabData2751.tabImage) ? '<img src="' + soy.$$escapeHtml(tabData2751.tabImage) + '"/>' : '') + '<div class="tab-name">' + soy.$$escapeHtml(tabData2751.name) + '</div></div>';
+  }
+  output += '</div><div class="sidebar-tab-body-container"></div>';
+  return output;
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.sidebarTabs.soyTemplateName = 'SketchUpTemplates.sidebarTabs';
+}
+
+;
+// This file was automatically generated from threedsexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.threeDsExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="option-label">\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8</div><div class="export-option"><div class="geometry-selector" data-bind="stopBinding: true"></div></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'threeds-export-two-sided-faces', checkedBinding: 'exportDoubleSidedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="threeds-export-two-sided-faces">\u88CF\u9762\u3068\u8868\u9762\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div><div class="option-label">\u65B9\u6CD5:</div><div class="export-option"><div>' + SketchUpTemplates.radioButton({id: 'threeds-export-two-sided-faces-as-material', name: 'threeds-export-two-sided-faces', checkedBinding: 'faces', checkedValue: '"two_sided_as_material"', enableBinding: 'exportDoubleSidedFaces()'}, null, opt_ijData) + '<label for="threeds-export-two-sided-faces-as-material" class="radio-button-label">\u30DE\u30C6\u30EA\u30A2\u30EB</label></div><div>' + SketchUpTemplates.radioButton({id: 'threeds-export-two-sided-faces-as-geometry', name: 'threeds-export-two-sided-faces', checkedBinding: 'faces', checkedValue: '"two_sided_as_geometry"', enableBinding: 'exportDoubleSidedFaces()'}, null, opt_ijData) + '<label for="threeds-export-two-sided-faces-as-geometry" class="radio-button-label">\u30B8\u30AA\u30E1\u30C8\u30EA</label></div></div><div class="export-option"  style="margin-top: 8px;">' + SketchUpTemplates.checkbox({id: 'threeds-export-edges', checkedBinding: 'exportEdges', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="threeds-export-edges">\u30B9\u30BF\u30F3\u30C9\u30A2\u30ED\u30FC\u30F3\u306E\u30A8\u30C3\u30B8\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u5C3A\u5EA6</div><div class="option-label">\u5358\u4F4D</div><div class="export-option"><div class="units-selector" data-bind="stopBinding: true"></div></div></div><div class="section"><div class="section-header">\u30DE\u30C6\u30EA\u30A2\u30EB</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'threeds-export-texture-maps', checkedBinding: 'exportTextureMaps', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="threeds-export-texture-maps">\u30C6\u30AF\u30B9\u30C1\u30E3 \u30DE\u30C3\u30D7\u3092\u30A8\u30AF\u30B9\u30DD\u30FC\u30C8\u3059\u308B</label></div><div><div class="option-label">\u9078\u629E:</div><div class="export-option"><div>' + SketchUpTemplates.radioButton({id: 'threeds-export-preserve-texture-coords-true', name: 'threeds-export-preserve-texture-coords', checkedBinding: 'preserveTextureCoords', checkedValue: true, enableBinding: 'exportTextureMaps'}, null, opt_ijData) + '<label for="threeds-export-preserve-texture-coords-true" class="radio-button-label">\u30C6\u30AF\u30B9\u30C1\u30E3\u5EA7\u6A19\u3092\u7DAD\u6301\u3059\u308B</label></div><div>' + SketchUpTemplates.radioButton({id: 'threeds-export-preserve-texture-coords-false', name: 'threeds-export-preserve-texture-coords', checkedBinding: 'preserveTextureCoords', checkedValue: false, enableBinding: 'exportTextureMaps'}, null, opt_ijData) + '<label for="threeds-export-preserve-texture-coords-false" class="radio-button-label">\u9802\u70B9\u3092\u7D50\u5408\u3059\u308B</label></div></div></div></div><div class="section"><div class="section-header">\u30AB\u30E1\u30E9</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'threeds-export-cameras', checkedBinding: 'exportCameras', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="threeds-export-cameras">\u30DA\u30FC\u30B8\u304B\u3089\u30AB\u30E1\u30E9\u3092\u751F\u6210\u3059\u308B</label></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.threeDsExportOptions.soyTemplateName = 'SketchUpTemplates.threeDsExportOptions';
+}
+
+;
+// This file was automatically generated from threedsimport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.threeDsImportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="import-options"><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="import-option">' + SketchUpTemplates.checkbox({id: 'threeds-import-merge-coplanar-faces', checkedBinding: 'importMergeCoplanarFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="threeds-import-merge-coplanar-faces">\u540C\u4E00\u5E73\u9762\u4E0A\u306E\u9762\u3092\u30DE\u30FC\u30B8\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u5C3A\u5EA6</div><div class="option-label">\u5358\u4F4D</div><div class="import-option"><div class="units-selector" data-bind="stopBinding: true"></div></div></div>' + SketchUpTemplates.importerButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.threeDsImportOptions.soyTemplateName = 'SketchUpTemplates.threeDsImportOptions';
+}
+
+;
+// This file was automatically generated from upgradebutton.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.upgradeButton = function(opt_data, opt_ignored, opt_ijData) {
+  return '<button class="upgrade-button ' + soy.$$escapeHtml(opt_data.className) + '" data-testid="upgrade-button"' + ((opt_data.click != null) ? ' data-bind="click: ' + soy.$$escapeHtml(opt_data.click) + '" ' : '') + '>' + ((opt_data.buttonText != null) ? soy.$$escapeHtml(opt_data.buttonText) : '\u30A2\u30C3\u30D7\u30B0\u30EC\u30FC\u30C9') + '</button>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.upgradeButton.soyTemplateName = 'SketchUpTemplates.upgradeButton';
+}
+
+;
+// This file was automatically generated from upgrademask.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.upgradeMask = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="upgrade-mask"><div class="upgrade-mask-container" data-testid="upgrade-container"><h2 data-bind="text: title"></h2><p data-bind="text: message">\u3053\u308C\u306F\u9AD8\u5EA6\u6A5F\u80FD\u3067\u3059\u3002\u30ED\u30B0\u30A4\u30F3\u307E\u305F\u306F\u30A2\u30C3\u30D7\u30B0\u30EC\u30FC\u30C9\u3057\u3066\u7D9A\u884C\u3057\u3066\u304F\u3060\u3055\u3044\u3002</p>' + SketchUpTemplates.upgradeButton({className: 'primary-action-button', click: 'onUpgrade'}, null, opt_ijData) + '<div class="secondary-action-button" data-bind=" visible: shouldShowCancel(), click: cancel">\u30AD\u30E3\u30F3\u30BB\u30EB</div></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.upgradeMask.soyTemplateName = 'SketchUpTemplates.upgradeMask';
+}
+
+;
+// This file was automatically generated from viewer.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.viewer = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="right-viewbar-top-container"><div class="right-viewbar right-viewbar-hidden"><div class="tab hide-sidebar-tab invisible" title="\u30B5\u30A4\u30C9\u30D0\u30FC\u3092\u975E\u8868\u793A" data-testid="viewer-hideSidebarButton"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'tb_right_arrow.svg') + '" /></div><div class="tab scenes-tab" title="\u30D3\u30E5\u30FC" data-testid="rightSidebar-scenes"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'scenes.svg') + '" /></div><div class="tab orbit-tab tool-group-active-tool-selected" title="\u30AA\u30FC\u30D3\u30C3\u30C8" data-testid="tools-activateOrbit"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'orbit.svg') + '" /></div><div class="tab pan-tab" title="\u30D1\u30F3\u8868\u793A" data-testid="tools-pan"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'pan.svg') + '" /></div><div class="tab zoom-tab" title="\u30BA\u30FC\u30E0" data-testid="viewer-zoomButton"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'zoom.svg') + '" /></div><div class="tab zoomextents-tab" title="\u5168\u4F53\u8868\u793A" data-testid="tools-zoomExtents"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'zoom_elements.svg') + '" /></div><div class="tab shadows-tab" title="\u5F71" data-testid="viewer-shadowsButton"><img src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'shadows.svg') + '" /></div><div class="right-viewbar-expander" title="\u5C55\u958B\u8868\u793A" data-testid="viewer-expandChevron"><img class="right-viewbar-expand-chevron" src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + 'wi_chevron_left.svg') + '" /></div></div><div class="right-viewbar-container invisible"></div></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.viewer.soyTemplateName = 'SketchUpTemplates.viewer';
+}
+
+
+SketchUpTemplates.viewerWatermark = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="viewer-watermark" title="\u3053\u306E\u30E2\u30C7\u30EB\u3092 3D Warehouse \u3067\u8868\u793A"><img class="viewer-watermark-image" src="' + soy.$$escapeHtml(opt_ijData.IMG_DIR + '3dw-logo.png') + '"></div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.viewerWatermark.soyTemplateName = 'SketchUpTemplates.viewerWatermark';
+}
+
+;
+// This file was automatically generated from vrmlexport.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace SketchUpTemplates.
+ */
+
+if (typeof SketchUpTemplates == 'undefined') { var SketchUpTemplates = {}; }
+
+
+SketchUpTemplates.vrmlExportOptions = function(opt_data, opt_ignored, opt_ijData) {
+  return '<div class="export-options"><div class="section"><div class="section-header">\u30B8\u30AA\u30E1\u30C8\u30EA</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'vrml-export-use-vrml-orientation', checkedBinding: 'exportUseVRMLOrientation', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="vrml-export-use-vrml-orientation">VRML \u6A19\u6E96\u306E\u5411\u304D\u3092\u4F7F\u7528\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'vrml-allow-mirrored-components', checkedBinding: 'exportAllowMirroredComponents', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="vrml-allow-mirrored-components">\u30DF\u30E9\u30FC\u30EA\u30F3\u30B0\u3057\u305F\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8\u3092\u8A31\u53EF\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'vrml-export-edges', checkedBinding: 'exportEdges', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="vrml-export-edges">\u30A8\u30C3\u30B8\u3092\u51FA\u529B\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u5C3A\u5EA6</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'vrml-export-two-sided-faces', checkedBinding: 'exportDoubleSidedFaces', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="vrml-export-two-sided-faces">\u88CF\u9762\u306E\u30DE\u30C6\u30EA\u30A2\u30EB\u3092\u7121\u8996\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'vrml-export-material-overrides', checkedBinding: 'exportMaterialOverrides', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="vrml-export-material-overrides">\u30DE\u30C6\u30EA\u30A2\u30EB\u306E\u30AA\u30FC\u30D0\u30FC\u30E9\u30A4\u30C9\u3092\u30C1\u30A7\u30C3\u30AF\u3059\u308B</label></div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'vrml-export-texture-maps', checkedBinding: 'exportTextureMaps', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="vrml-export-texture-maps">\u30C6\u30AF\u30B9\u30C1\u30E3 \u30DE\u30C3\u30D7\u3092\u51FA\u529B\u3059\u308B</label></div></div><div class="section"><div class="section-header">\u30AB\u30E1\u30E9</div><div class="export-option">' + SketchUpTemplates.checkbox({id: 'vrml-export-cameras', checkedBinding: 'exportCameras', clickHandler: 'undefined'}, null, opt_ijData) + '<label for="vrml-export-cameras">\u30AB\u30E1\u30E9\u3092\u751F\u6210\u3059\u308B</label></div></div>' + SketchUpTemplates.exporterButtonSet(null, null, opt_ijData) + '</div>';
+};
+if (goog.DEBUG) {
+  SketchUpTemplates.vrmlExportOptions.soyTemplateName = 'SketchUpTemplates.vrmlExportOptions';
+}
