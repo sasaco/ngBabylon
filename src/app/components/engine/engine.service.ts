@@ -1,4 +1,4 @@
-import { WindowRefService } from './../services/window-ref.service';
+import { WindowRefService } from '../../services/window-ref.service';
 import { ElementRef, Injectable, NgZone } from '@angular/core';
 import {
   Engine,
@@ -13,7 +13,9 @@ import {
   StandardMaterial,
   Texture,
   DynamicTexture,
-  Space
+  Space,
+  Matrix,
+  VertexData
 } from '@babylonjs/core';
 import * as WebIFC from 'web-ifc';
 
@@ -175,4 +177,147 @@ export class EngineService {
     const zChar = makeTextPlane('Z', 'blue', size / 10);
     zChar.position = new Vector3(0, 0.05 * size, 0.9 * size);
   }
+
+
+
+
+  //#region IFCからメッシュの読み込み
+  public async loadIFCFile(buffer: Uint8Array){
+      await this.ifcapi.Init();
+      const modelID = this.ifcapi.OpenModel(buffer)
+      this.createMesh(modelID)
+      // アニメーションさせる場合
+      this.createMeshAnimation(modelID)
+  }
+
+    // メッシュの作成
+    private createMesh(modelID: number) {
+      this.ifcapi.StreamAllMeshes(modelID, (mesh) => this.loadMesh(modelID, mesh))
+    }
+  // アニメーションをさせてメッシュを作成
+  private createMeshAnimation(modelID: number) {
+    if (this.scene === null) return
+
+    // すべてのメッシュを同期取得
+    let meshData = []
+    const meshes = this.ifcapi.LoadAllGeometry(modelID)
+    for (let i = 0; i < meshes.size(); i++) {
+      const mesh = meshes.get(i)
+      for(const geometry of this.loadGeometry(modelID, mesh)){
+        meshData.push(geometry)
+      }
+    }
+
+    // 表示順のソート設定
+    meshData = meshData.map(v => {
+      let posy = 100000
+      for (let i = 0; i < v.vertexData.positions.length; i += 3) {
+        posy = Math.min(posy, v.vertexData.positions[i + 2])
+      }
+      return { ...v, sortKey: v.flatTransformation[13] + posy }
+    })
+    meshData.sort((a, b) => a.sortKey - b.sortKey)
+
+    // 10秒かけて表示されるように
+    const msec = 10000 / meshData.length
+    meshData.forEach((v, i) => {
+      setTimeout(() => {
+        this.ifc2babylonMesh(this.scene, v.vertexData, v.flatTransformation, v.color)
+      }, msec * i);
+    })
+  }
+
+  // IFCからメッシュの読み込み
+  private loadMesh(modelID: number, mesh: WebIFC.FlatMesh) {
+    if (this.scene === null) return;
+
+    // IFCからBabylon.jsのメッシュを構築
+    for(const geometry of this.loadGeometry(modelID, mesh)){
+      this.ifc2babylonMesh(
+        this.scene,
+        geometry.vertexData,
+        geometry.flatTransformation,
+        geometry.color
+      )
+    }
+  }
+
+  // IFCからメッシュ情報を取得するジェネレータ
+  private* loadGeometry(modelID: number, mesh: WebIFC.FlatMesh) {
+    const placedGeometries = mesh.geometries;
+    const size = placedGeometries.size();
+    for (let i = 0; i < size; i++) {
+      const placedGeometry = placedGeometries.get(i)
+      const geometry = this.ifcapi.GetGeometry(modelID, placedGeometry.geometryExpressID);
+      // 6つで一組のデータ： x, y, z, normalx, normaly, normalz
+      const verts = this.ifcapi.GetVertexArray(geometry.GetVertexData(), geometry.GetVertexDataSize());
+      // 3つで一組のデータ：頂点index 1, 2, 3
+      const indices = this.ifcapi.GetIndexArray(geometry.GetIndexData(), geometry.GetIndexDataSize());
+
+      // 頂点の座標と法線を分離
+      const positions = [];
+      const normals = [];
+      for (let i = 0; i < verts.length; i += 6) {
+        positions.push(verts[i], verts[i + 1], verts[i + 2]);
+        normals.push(verts[i + 3], verts[i + 4], verts[i + 5]);
+      }
+
+      const vertexData = {
+        positions: positions,
+        normals: normals,
+        indices: Array.from(indices),
+      }
+
+      // 頂点と変形行列と色情報を返す
+      const geometoryData = {
+        vertexData: vertexData,
+        flatTransformation: placedGeometry.flatTransformation,
+        color: placedGeometry.color,
+      };
+
+      yield geometoryData;
+    }
+  }
+
+  // IFCの形状情報からBabylon.jsのメッシュを作成
+  private ifc2babylonMesh(
+    scene: Scene,
+    vertexData: { positions: number[], normals: number[], indices: number[] },
+    flatTransformation: number[],
+    color: { x: number, y: number, z: number, w: number },
+  ) {
+    // メッシュ作成
+    const mesh = this.createMeshFromData(scene, vertexData)
+
+    // メッシュの移動・変形
+    const transformationMatrix = Matrix.FromArray(flatTransformation);
+    mesh.setPivotMatrix(transformationMatrix, false);
+
+    // 奥行きZの左手系に
+    mesh.scaling.z *= -1;
+
+    // 面を反転
+    mesh.flipFaces(true);
+
+    // 色設定
+    const { x, y, z, w } = color
+    const material = new StandardMaterial("material", scene);
+    material.diffuseColor = new Color3(x, y, z);
+    material.alpha = w
+    material.backFaceCulling = false;
+    mesh.material = material;
+  }
+
+  // 頂点データ化からメッシュ作成
+  private createMeshFromData(scene: Scene, vertexData: { positions: number[], normals: number[], indices: number[] }) {
+    const mesh = new Mesh("mesh", scene);
+    const vertexDataForBabylon = new VertexData();
+    vertexDataForBabylon.positions = vertexData.positions;
+    vertexDataForBabylon.normals = vertexData.normals;
+    vertexDataForBabylon.indices = vertexData.indices;
+    vertexDataForBabylon.applyToMesh(mesh);
+    return mesh;
+  }
+  //#endregion
+
 }
