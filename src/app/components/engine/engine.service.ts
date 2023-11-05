@@ -17,6 +17,7 @@ import {
   Matrix,
   VertexData
 } from '@babylonjs/core';
+import { GridMaterial } from '@babylonjs/materials';
 import * as WebIFC from 'web-ifc';
 
 
@@ -61,8 +62,25 @@ export class EngineService {
     this.camera.attachControl(this.canvas, false);
 
     // ライトを作成 create a basic light, aiming 0,1,0 - meaning, to the sky
-    this.light = new HemisphericLight('light1', new Vector3(0, 1, 0), this.scene);
+    this.light = new HemisphericLight('light1', new Vector3(0, 100, 0), this.scene);
 
+        // Ground
+    // Kuchinoerabu Island
+    // https://ja.wikipedia.org/wiki/%E5%8F%A3%E6%B0%B8%E8%89%AF%E9%83%A8%E5%B3%B6
+    const BASE_ASSETS_URL = "https://cx20.github.io/jsdo.it-archives/assets/";
+    const ground = Mesh.CreateGroundFromHeightMap("ground", BASE_ASSETS_URL + "4/9/G/4/49G4v.png", 50, 50, 100, 0, 5, this.scene, false);
+    const groundMaterial = new GridMaterial("groundMaterial", this.scene);
+    groundMaterial.majorUnitFrequency = 5;
+    groundMaterial.minorUnitVisibility = 0.45;
+    groundMaterial.gridRatio = 0.5;
+    groundMaterial.mainColor = new Color3(0, 0.05, 0.2);
+    groundMaterial.lineColor = new Color3(0, 1.0, 1.0);
+    groundMaterial.opacity = 0.98;
+
+    ground.position.y = -2.5;
+    ground.material = groundMaterial;
+    ground.material.wireframe = false;
+    /*
     // create a built-in "sphere" shape; its constructor takes 4 params: name, subdivisions, radius, scene
     this.sphere = Mesh.CreateSphere('sphere1', 16, 2, this.scene);
 
@@ -73,14 +91,17 @@ export class EngineService {
 
     // move the sphere upward 1/2 of its height
     this.sphere.position.y = 1;
+    */
 
     // simple rotation along the y axis
     this.scene.registerAfterRender(() => {
+      /*
       this.sphere.rotate(
         new Vector3(0, 1, 0),
         0.02,
         Space.LOCAL
       );
+      */
     });
 
     // generates the world x-y-z axis for better understanding
