@@ -66,7 +66,7 @@ export class EngineService {
     this.light = new HemisphericLight('light1', new Vector3(0, 100, 0), this.scene);
 
     // 床を生成 create a Ground
-    const ground = MeshBuilder.CreateGround("ground", {width: 50, height: 50}, this.scene);    
+    const ground = MeshBuilder.CreateGround("ground", {width: 100, height: 100}, this.scene);    
     const groundMaterial = new GridMaterial("groundMaterial", this.scene);
     groundMaterial.majorUnitFrequency = 5;
     groundMaterial.minorUnitVisibility = 0.45;
