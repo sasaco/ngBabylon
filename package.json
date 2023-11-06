@@ -7,8 +7,8 @@
     "_wasmcopy1": "node -e \"require('fs').copyFileSync('node_modules/web-ifc/web-ifc.wasm', 'src/assets/wasm/web-ifc.wasm')\"",
     "_wasmcopy2": "node -e \"require('fs').copyFileSync('node_modules/web-ifc/web-ifc-mt.wasm', 'src/assets/wasm/web-ifc-mt.wasm')\"",
     "start": "npm run setup && ng serve -o",
-    "build": "ng build -c development",
-    "build:prod": "ng build -c production",
+    "build": "npm run setup && ng build -c development",
+    "build:prod": "npm run setup && ng build --configuration production --base-href \"https://structuralengine.github.io/ngBabylon/\" && angular-cli-ghpages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -27,6 +27,7 @@
     "@angular/router": "~16.2.1",
     "@babylonjs/core": "^6.17.0",
     "@babylonjs/materials": "^6.17.0",
+    "angular-cli-ghpages": "^1.0.7",
     "bootstrap": "^5.3.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.4.0",
