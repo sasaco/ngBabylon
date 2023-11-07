@@ -44,5 +44,5 @@ Thumbs.db
 
 # Project specific
 package-lock.json
-src/assets/wasm/
+src/assets/wasm/*
 !src/assets/wasm/.gitkeep
